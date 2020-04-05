@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Python-Ch09 檔案與異常處理</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.4.1-dist\css\bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <!--程式碼的css-->
+    <link rel='stylesheet' id='prism-style-css' href='/css/prism.css' />
+    <!--字體-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">JJNET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JJDing-Louis">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JJDing-Louis/MySoftwareProduct" >Product</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link disable" href="python.html">
+                                <span data-feather="home"></span>基礎概念 <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch01 基本程式設計.html">
+                                <span data-feather="file-text"></span>
+                                Ch01 基本程式設計
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch02 選擇敘述.html">
+                                <span data-feather="file-text"></span>
+                                Ch02 選擇敘述
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch03 迴圈敘述.html">
+                                <span data-feather="file-text"></span>
+                                Ch03 迴圈敘述
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch04 進階流程控制.html">
+                                <span data-feather="file-text"></span>
+                                Ch04 進階流程控制
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch05 函式.html">
+                                <span data-feather="file-text"></span>
+                                Ch05 函式
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch06 串列.html">
+                                <span data-feather="file-text"></span>
+                                Ch06 串列
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch07 數組、集合、辭典.html">
+                                <span data-feather="file-text"></span>
+                                Ch07 數組、集合、辭典
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch08 字串.html">
+                                <span data-feather="file-text"></span>
+                                Ch08 字串
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch09 檔案與異常處理.html">
+                                <span data-feather="file-text"></span>
+                                Ch09 檔案與異常處理
+                            </a>
+                        </li>
+                    </ul>
+
+                    <a class="nav-link disable" href="#">
+                        <span data-feather="home"></span>網頁資料擷取與分析 <span class="sr-only">(current)</span>
+                    </a>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch01 資料處裡
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch02 網頁資料擷取與轉換
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch03 資料分析能力
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch04 資料視覺化
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Ch09 檔案與異常處理</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+                <h2>索引</h2>
+                <div class="container">
+                    <!-- Example row of columns -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5><a href="#9-1">9-1 檔案的運作流程</a></h5>
+                            <h5><a href="#9-2">9-2 檔案資料得寫入與讀取</a></h5>
+                            <h5><a href="#9-3">8-3 二進位檔案的寫入與讀取</a></h5>
+                            <h5><a href="#9-4">9-4 異常處理</a></h5>
+                        </div>
+                    </div>
+                    <hr>
+                </div> <!-- /container -->
+                <h3 id="9-1">9-1 檔案的運作流程</h3>
+                <p>有關檔案的運作流程如下:</p>
+                <ul>
+                    <li>1、利用open模式開啟檔案名稱和其模式。</li>
+                    <li>2、利用寫入的函式將資料寫入檔案，或是利用讀取的函式從檔案讀取資料。</li>
+                    <li>3、利用close函式將檔案關閉</li>
+                </ul>
+                <p>利用open打開檔案，其語法如下:</p>
+                <h4>語法:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                    variable_name = open('file_name', 'mode')
+                    </code>         
+                </pre>
+                <p>variable_name: 自訂變數名稱、 file_name :自訂檔案的檔名、mode :檔案運作的屬性</p>
+                <div class="row">
+                    <div style="margin-right: 80px;" class="col-3">
+                        <h6>表 9-1 文字檔模式</h6>
+                        <hr>
+                        <table class="table text-center " border="3" >
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>運作屬性</th>
+                                    <th>說明</th>
+                                </tr>
+                                <tr>
+                                    <td>w</td>
+                                    <td>寫入</td>
+                                </tr>
+                                <tr>
+                                    <td>r</td>
+                                    <td>讀取</td>
+                                </tr>
+                                <tr>
+                                    <td>a</td>
+                                    <td>附加</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-3">
+                        <h6>表 9-2 二進位檔模式</h6>
+                        <hr>
+                        <table class="table text-center " border="3">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>運作屬性</th>
+                                    <th>說明</th>
+                                </tr>
+                                <tr>
+                                    <td>wb</td>
+                                    <td>寫入</td>
+                                </tr>
+                                <tr>
+                                    <td>rb</td>
+                                    <td>讀取</td>
+                                </tr>
+                                <tr>
+                                    <td>ab</td>
+                                    <td>附加</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <p>也可以用以下語法打開檔案:</p>
+                <h4>語法:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                    with open('name.dat', 'w') as outfile:
+                    </code>         
+                </pre>
+                <h3 id="9-2">9-2 檔案資料得寫入與讀取</h3>
+                 <h6>表 9-1 文字檔案的存取函式</h6>
+                        <hr>
+                        <table class="table text-center " border="3" >
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>文字檔案的存取函式</th>
+                                    <th>說明</th>
+                                </tr>
+                                <tr>
+                                    <td>write</td>
+                                    <td>寫入</td>
+                                </tr>
+                                <tr>
+                                    <td>read()</td>
+                                    <td>讀取檔案所有內容</td>
+                                </tr>
+                                <tr>
+                                    <td>readline()</td>
+                                    <td>從檔案中讀取一行</td>
+                                </tr>
+                                <tr>
+                                    <td>readlines()</td>
+                                    <td>讀取檔案所有內容</td>
+                                </tr>
+                                <tr>
+                                    <td>read(n)</td>
+                                    <td>從檔案中讀取n個字元</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <P>將內容寫入檔案的程式碼如下:</P>
+                        <h4>範例程式:</h4>
+                        <pre class="wp-block-fm-prism line-numbers">
+                            <code class="language-python">
+                                def main():
+                                    outfile = open('fruits.dat', 'w')
+                                    #write data to the file
+                                    outfile.write('Banana\n')
+                                    outfile.write('Grape\n')
+                                    outfile.write('Orange\n')
+                                    outfile.close()
+                                
+                                main()
+                            </code>         
+                        </pre>
+                        <p>使用open函式打開檔案，並利用write函式將內容寫入檔案中，最後利用close函式關閉檔案。</p>
+                        <p>如果再從新執行上述的main()方法會把之前的寫入的內容覆蓋掉，此時利用以下方法:</p>
+                        <h4>範例程式:</h4>
+                        <pre class="wp-block-fm-prism line-numbers">
+                            <code class="language-python">
+                                def main():
+                                    outfile = open('fruits.dat', 'a')
+                                    #append data to the file
+                                    outfile.write('Kiwi\n')
+                                    outfile.close()
+                                
+                                main()
+                            </code>         
+                        </pre>                
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="/javascripts/dashboard.js"></script>
+    <!--程式碼的js-->
+    <script src="/javascripts/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/code-line"></script>
+</body>
+
+</html>

@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Python-Ch02 選擇敘述</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.4.1-dist\css\bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <!--程式碼的css-->
+    <link rel='stylesheet' id='prism-style-css' href='/css/prism.css' />
+    <!--字體-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">JJNET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JJDing-Louis">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JJDing-Louis/MySoftwareProduct" >Product</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link disable" href="python.html">
+                                <span data-feather="home"></span>
+                                基礎概念 <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch01 基本程式設計.html">
+                                <span data-feather="file-text"></span>
+                                Ch01 基本程式設計
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch02 選擇敘述.html">
+                                <span data-feather="file-text"></span>
+                                Ch02 選擇敘述
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch03 迴圈敘述.html">
+                                <span data-feather="file-text"></span>
+                                Ch03 迴圈敘述
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch04 進階流程控制.html">
+                                <span data-feather="file-text"></span>
+                                Ch04 進階流程控制
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch05 函式.html">
+                                <span data-feather="file-text"></span>
+                                Ch05 函式
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch06 串列.html">
+                                <span data-feather="file-text"></span>
+                                Ch06 串列
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch07 數組、集合、辭典.html">
+                                <span data-feather="file-text"></span>
+                                Ch07 數組、集合、辭典
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch08 字串.html">
+                                <span data-feather="file-text"></span>
+                                Ch08 字串
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch09 檔案與異常處理.html">
+                                <span data-feather="file-text"></span>
+                                Ch09 檔案與異常處理
+                            </a>
+                        </li>
+                    </ul>
+
+                    <a class="nav-link disable" href="#">
+                        <span data-feather="home"></span>網頁資料擷取與分析 <span class="sr-only">(current)</span>
+                    </a>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch01 資料處裡
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch02 網頁資料擷取與轉換
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch03 資料分析能力
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch04 資料視覺化
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Ch02 選擇敘述</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+                <h2>索引</h2>
+                <div class="container">
+                    <!-- Example row of columns -->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h5><a href="#2-1">2-1 關係運算子</a></h5>
+                            <h5><a href="#2-2">2-2 if 敘述</a></h5> 
+                            <h5><a href="#2-3">2-3 if...else 敘述</a></h5>
+                            <h5><a href="#2-4">2-4 if...elif...else 敘述</a></h5>
+                            <h5><a href="#2-5">2-5 邏輯運算子</a></h5>                                          
+                        </div>                        
+                    </div>       
+                    <hr>        
+                </div> <!-- /container -->
+                <h3 id="2-1">2-1 關係運算子</h3>
+                <p>Python的輸出函式為"print()"，結果會顯示於console上</p>
+                <h5>表2-1 關係運算子</h5>
+                <hr>
+                <table class="table text-center col-md-3" border="3" width="20%" cellspacing="5" cellpading="5" >
+                    <thead class="thead-light">
+                    <tr>
+                        <th>運算子</th>
+                        <th>意義</th>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>小於</td>
+                    </tr>
+                    <tr>
+                        <td><=</td>
+                        <td>小於等於</td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>大於</td>
+                    </tr>
+                    <tr>
+                        <td>>=</td>
+                        <td>大於等於</td>
+                    </tr>
+                    <tr>
+                        <td>==</td>
+                        <td>等於</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>不等於</td>
+                    </tr>
+                    </thead>
+                </table>
+                <h3 id="2-2">2-2 if 敘述</h3>
+                <h4>語法:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                    if 條件運算式:
+                        主體敘述
+                    </code>         
+                </pre>
+                <p>input()函釋回傳的結果是一個字串，而括號裡面可以放任何想在裡面顯式的訊號，例如:</p>
+                <img src="imges\fig2-1.jpg" width="600" height="150">
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                    a = eval(input('Enter a number: '))
+                    if a > 0:
+                        print(a, 'is greater than 0')
+                    print('Over')
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 100
+                        100 is great than 
+                        Over
+                    </code>         
+                </pre>
+                <h3 id="2-3">2-3 if...else 敘述</h3>
+                <h4>語法:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                    if 條件運算式:
+                        主體敘述 1
+                    else:
+                        主體敘述 2    
+                    </code>         
+                </pre>
+                <p>敘述</p>
+                <img src="imges\fig2-2.jpg" width="600" height="150">
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                    a = eval(input('Enter a number: '))
+                    if a > 0:
+                        print(a, 'is greater than 0')
+                    else:
+                        print(a, 'is less than 0')
+                    print('Over')
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <p>(一)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 100
+                        100 is great than 
+                        Over
+                    </code>         
+                </pre>
+                <p>(二)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: -100
+                        -100 is less than 
+                        Over
+                    </code>         
+                </pre>
+                <h3 id="2-4">2-4 if...elif...else 敘述</h3>
+                <h4>語法:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                    if 條件運算式:
+                        主體敘述 1
+                    elif條件運算式:
+                        主體敘述 2
+                    eles:
+                        主體敘述3
+                    </code>         
+                </pre>
+                <p>敘述</p>
+                <img src="imges\fig2-3.jpg" width="600" height="150">
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                    a = eval(input('Enter a number: '))
+                    if a > 0:
+                        print(a, 'is greater than 0')
+                    elif a < 0:
+                        print(a, 'is less than 0')
+                    else:
+                        print(a, 'is eaual to 0')
+                    print('Over')
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <p>(一)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 100
+                        100 is great than 0
+                        Over
+                    </code>         
+                </pre>
+                <p>(二)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: -100
+                        -100 is less than 0
+                        Over
+                    </code>         
+                </pre>
+                <p>(三)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 0
+                        0 is equal to 0 
+                        Over
+                    </code>         
+                </pre>
+                <h3 id="2-5">2-5 邏輯運算子</h3>
+                <h5>表2-3 邏輯運算子</h5>
+                <hr>
+                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5" >
+                    <thead class="thead-light">
+                    <tr>
+                        <th>運算子</th>
+                        <th>意義</th>
+                    </tr>   
+                    <tr>
+                        <td>and</td>
+                        <td>且</td>
+                    </tr>
+                    <tr>
+                        <td>or</td>
+                        <td>或</td>
+                    </tr> 
+                    <tr>
+                        <td>not</td>
+                        <td>反</td>
+                    </tr>                  
+                   </thead>
+                </table>
+                <p>敘述</p>
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                        num = eval(input('Enter a number: '))
+                        if (85<=num) and (num <= 95):
+                            print('%d is in the between 85 and 95'%(num))
+                        else:
+                            print('%d is not in the between 85 and 95'%(num))
+                        print('Over')
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <p>(一)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 100
+                        100 is not in the between 85 and 95 
+                        Over
+                    </code>         
+                </pre>
+                <p>(二)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 90
+                        90 is in the between 85 and 95 
+                        Over
+                    </code>         
+                </pre>
+                <p></p>
+                <p>其實，也可以這樣改寫</p>
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                        num = eval(input('Enter a number: '))
+                        if (85 <= num <= 95):
+                            print('%d is in the between 85 and 95'%(num))
+                        else:
+                            print('%d is not in the between 85 and 95'%(num))
+                        print('Over')
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <p>(一)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 100
+                        100 is not in the between 85 and 95 
+                        Over
+                    </code>         
+                </pre>
+                <p>(二)</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        Enter a number: 90
+                        90 is in the between 85 and 95 
+                        Over
+                    </code>         
+                </pre>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="/javascripts/dashboard.js"></script>
+    <!--程式碼的js-->
+    <script src="/javascripts/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/code-line"></script>
+</body>
+
+</html>
