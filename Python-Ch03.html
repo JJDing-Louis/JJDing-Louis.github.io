@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Python-Ch03 迴圈敘述</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.4.1-dist\css\bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <!--程式碼的css-->
+    <link rel='stylesheet' id='prism-style-css' href='/css/prism.css' />
+    <!--字體-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">JJNET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JJDing-Louis">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/JJDing-Louis/MySoftwareProduct" >Product</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link disable" href="python.html">
+                                <span data-feather="home"></span>
+                                基礎概念 <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch01 基本程式設計.html">
+                                <span data-feather="file-text"></span>
+                                Ch01 基本程式設計
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch02 選擇敘述.html">
+                                <span data-feather="file-text"></span>
+                                Ch02 選擇敘述
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch03 迴圈敘述.html">
+                                <span data-feather="file-text"></span>
+                                Ch03 迴圈敘述
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch04 進階流程控制.html">
+                                <span data-feather="file-text"></span>
+                                Ch04 進階流程控制
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch05 函式.html">
+                                <span data-feather="file-text"></span>
+                                Ch05 函式
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch06 串列.html">
+                                <span data-feather="file-text"></span>
+                                Ch06 串列
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch07 數組、集合、辭典.html">
+                                <span data-feather="file-text"></span>
+                                Ch07 數組、集合、辭典
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch08 字串.html">
+                                <span data-feather="file-text"></span>
+                                Ch08 字串
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Python-Ch09 檔案與異常處理.html">
+                                <span data-feather="file-text"></span>
+                                Ch09 檔案與異常處理
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="nav-link disable" href="#">
+                        <span data-feather="home"></span>網頁資料擷取與分析 <span class="sr-only">(current)</span>
+                    </a>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch01 資料處裡
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch02 網頁資料擷取與轉換
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch03 資料分析能力
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Ch04 資料視覺化
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Ch03 迴圈敘述</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+                <h2>索引</h2>
+                <div class="container">
+                    <!-- Example row of columns -->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h5><a href="#3-1">3-1 while敘述</a></h5>
+                            <h5><a href="#3-2">3-2 for...in range 迴圈</a></h5> 
+                            <h5><a href="#3-3">3-3 巢狀迴圈</a></h5>                                       
+                        </div>                        
+                    </div>       
+                    <hr>        
+                </div> <!-- /container -->
+                <h3 id="3-1">3-1 while敘述</h3>
+                <p>Python的輸出函式為"print()"，結果會顯示於console上</p>
+                <h4>語法:</h4>
+                <p>while的迴圈敘述如下:</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        初值設定
+                        while 條件運算式:
+                            主體敘述
+                    </code>         
+                </pre>
+                <img src="/imges/fig3-1.JPG" width="720" height="150" >
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python ">
+                        i = 1
+                        total = 0
+                        while i <= 100:
+                            total += i
+                            i += 1
+                        print('total = ', total)
+
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        total = 5050
+                    </code>         
+                </pre>
+                <h3 id="3-2">3-2 for...in range 迴圈</h3>
+                <h4>語法:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        for i in range(start, end, step):
+                    </code>         
+                </pre>
+                <p>表示 i 是從start值開始，直到end-1，中間的過程是每次值step值，若值為 1 ，則可省略。</p>
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                        total = 0
+                        for i in range(1, 101):
+                            total += i
+                        print('total = ',total)
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        total = 5050
+                    </code>         
+                </pre>
+                <h3 id="3-3">3-3 巢狀迴圈</h3>
+                <p>巢狀迴圈(nested loop)或稱多重迴圈，顧名思義為迴圈內又有一回圈。</p>
+                <h4>語法:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        for i in raneg(start, end, step):
+                            /敘述內容1/
+                            for j in range(start, end, step):
+                                /敘述內容2/
+                    </code>         
+                </pre>
+                <p>若是while迴圈，則:</p>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        while(判斷條件1):
+                            /敘述內容1/
+                            while(判斷條件2):
+                                /敘述內容2/
+                    </code>         
+                </pre>
+
+                <h4>範例程式</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                        print('=====')
+                        for x in range(1, 6):
+                            print('x = %d'%(x))
+                            for y in range(1, 6):
+                                print(' y = %d'%(y))
+                            print('=====')
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        =====
+                        x = 1
+                         y = 1
+                         y = 2
+                         y = 3
+                         y = 4
+                         y = 5
+                        =====
+                        x = 2
+                         y = 1
+                         y = 2
+                         y = 3
+                         y = 4
+                         y = 5
+                        =====
+                        x = 3
+                         y = 1
+                         y = 2
+                         y = 3
+                         y = 4
+                         y = 5
+                        =====
+                        x = 4
+                         y = 1
+                         y = 2
+                         y = 3
+                         y = 4
+                         y = 5
+                        =====
+                        x = 5
+                         y = 1
+                         y = 2
+                         y = 3
+                         y = 4
+                         y = 5
+                        =====
+                    </code>         
+                </pre>
+                <p>如果想做一個九九乘法表，可參考以下程式碼:</p>
+                <h4>範例程式:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-python">
+                        for i in range(125):
+                             print('=', end='')
+                        print()
+                        for i in range(1,10):
+                            for j in range(1, 10):
+                                if j < 9:
+                                    print('%2d x %2d =%3d '%(j,i,i*j), end=' ')
+                                else:
+                                    print('%2d x %2d =%3d ' % (j, i, i*j))
+                        for i in range(125):
+                            print('=', end='')
+                    </code>         
+                </pre>
+                <h4>輸出結果:</h4>
+                <pre class="wp-block-fm-prism line-numbers">
+                    <code class="language-textile">
+                        =============================================================================================================================
+                        1 x  1 =  1   2 x  1 =  2   3 x  1 =  3   4 x  1 =  4   5 x  1 =  5   6 x  1 =  6   7 x  1 =  7   8 x  1 =  8   9 x  1 =  9 
+                        1 x  2 =  2   2 x  2 =  4   3 x  2 =  6   4 x  2 =  8   5 x  2 = 10   6 x  2 = 12   7 x  2 = 14   8 x  2 = 16   9 x  2 = 18 
+                        1 x  3 =  3   2 x  3 =  6   3 x  3 =  9   4 x  3 = 12   5 x  3 = 15   6 x  3 = 18   7 x  3 = 21   8 x  3 = 24   9 x  3 = 27 
+                        1 x  4 =  4   2 x  4 =  8   3 x  4 = 12   4 x  4 = 16   5 x  4 = 20   6 x  4 = 24   7 x  4 = 28   8 x  4 = 32   9 x  4 = 36 
+                        1 x  5 =  5   2 x  5 = 10   3 x  5 = 15   4 x  5 = 20   5 x  5 = 25   6 x  5 = 30   7 x  5 = 35   8 x  5 = 40   9 x  5 = 45 
+                        1 x  6 =  6   2 x  6 = 12   3 x  6 = 18   4 x  6 = 24   5 x  6 = 30   6 x  6 = 36   7 x  6 = 42   8 x  6 = 48   9 x  6 = 54 
+                        1 x  7 =  7   2 x  7 = 14   3 x  7 = 21   4 x  7 = 28   5 x  7 = 35   6 x  7 = 42   7 x  7 = 49   8 x  7 = 56   9 x  7 = 63 
+                        1 x  8 =  8   2 x  8 = 16   3 x  8 = 24   4 x  8 = 32   5 x  8 = 40   6 x  8 = 48   7 x  8 = 56   8 x  8 = 64   9 x  8 = 72 
+                        1 x  9 =  9   2 x  9 = 18   3 x  9 = 27   4 x  9 = 36   5 x  9 = 45   6 x  9 = 54   7 x  9 = 63   8 x  9 = 72   9 x  9 = 81 
+                        =============================================================================================================================
+                    </code> 
+                </pre> 
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="/javascripts/dashboard.js"></script>
+    <!--程式碼的js-->
+    <script src="/javascripts/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/code-line"></script>
+</body>
+
+</html>
