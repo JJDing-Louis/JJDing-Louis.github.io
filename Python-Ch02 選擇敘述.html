@@ -72,10 +72,7 @@
                 </li>
 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
         </div>
     </nav>
 
@@ -184,13 +181,8 @@
                     <h1 class="h2">Ch02 選擇敘述</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>                            
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
                     </div>
                 </div>
                 <h2>索引</h2>
@@ -205,10 +197,13 @@
                             <h5><a href="#2-5">2-5 邏輯運算子</a></h5>                                          
                         </div>                        
                     </div>       
-                    <hr>        
+                            
                 </div> <!-- /container -->
+                <hr>
                 <h3 id="2-1">2-1 關係運算子</h3>
-                <p>Python的輸出函式為"print()"，結果會顯示於console上</p>
+                <p></p>
+                <p>在選擇敘述中一定會運用到關係運算子，作為條件運算的真假。</p>
+                <p></p>
                 <h5>表2-1 關係運算子</h5>
                 <hr>
                 <table class="table text-center col-md-3" border="3" width="20%" cellspacing="5" cellpading="5" >
@@ -243,16 +238,21 @@
                     </tr>
                     </thead>
                 </table>
+                <p></p>
                 <h3 id="2-2">2-2 if 敘述</h3>
+                <p></p>
                 <h4>語法:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
                     if 條件運算式:
                         主體敘述
                     </code>         
-                </pre>
-                <p>input()函釋回傳的結果是一個字串，而括號裡面可以放任何想在裡面顯式的訊號，例如:</p>
+                </pre>  
+                <p>if敘述的條件運作流程如下:</p>              
                 <img src="imges\fig2-1.jpg" width="600" height="150">
+                <P></P>
+                <p>input()函釋回傳的結果是一個字串，而括號裡面可以放任何想在裡面顯式的訊號，例如:</p>
+                <p></p>
                 <h4>範例程式</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
@@ -262,6 +262,7 @@
                     print('Over')
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
@@ -270,7 +271,9 @@
                         Over
                     </code>         
                 </pre>
+                <P></P>
                 <h3 id="2-3">2-3 if...else 敘述</h3>
+                <P></P>
                 <h4>語法:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
@@ -280,8 +283,9 @@
                         主體敘述 2    
                     </code>         
                 </pre>
-                <p>敘述</p>
-                <img src="imges\fig2-2.jpg" width="600" height="150">
+                <p>if...else敘述的條件運作流程如下:</p>  
+                <img src="imges/fig2-2.jpg" width="600" height="150">
+                <P></P>
                 <h4>範例程式</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
@@ -293,6 +297,7 @@
                     print('Over')
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <p>(一)</p>
                 <pre class="wp-block-fm-prism line-numbers">
@@ -310,7 +315,9 @@
                         Over
                     </code>         
                 </pre>
+                <p></p>
                 <h3 id="2-4">2-4 if...elif...else 敘述</h3>
+                <p></p>
                 <h4>語法:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
@@ -322,8 +329,11 @@
                         主體敘述3
                     </code>         
                 </pre>
-                <p>敘述</p>
+                <p></p>
+                <p>if...elif...else敘述的條件運作流程如下:</p>  
+                <p></p>
                 <img src="imges\fig2-3.jpg" width="600" height="150">
+                <p></p>
                 <h4>範例程式</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
@@ -337,6 +347,7 @@
                     print('Over')
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <p>(一)</p>
                 <pre class="wp-block-fm-prism line-numbers">
@@ -362,10 +373,12 @@
                         Over
                     </code>         
                 </pre>
+                <P></P>
                 <h3 id="2-5">2-5 邏輯運算子</h3>
+                <p></p>
                 <h5>表2-3 邏輯運算子</h5>
                 <hr>
-                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5" >
+                <table class="table text-center col-2 " border="3" width="50%" cellspacing="5" cellpading="5" >
                     <thead class="thead-light">
                     <tr>
                         <th>運算子</th>
@@ -385,7 +398,8 @@
                     </tr>                  
                    </thead>
                 </table>
-                <p>敘述</p>
+                <p>and的左右兩邊的條件敘述要為真的時候，整個條件的結果才為真，or只要一個條件為真，其結果為真，not的作用為把得到的結果由真轉假，由假轉為真。如以下範例:</p>
+                <p></p>
                 <h4>範例程式</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
@@ -397,6 +411,7 @@
                         print('Over')
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <p>(一)</p>
                 <pre class="wp-block-fm-prism line-numbers">
@@ -427,6 +442,7 @@
                         print('Over')
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <p>(一)</p>
                 <pre class="wp-block-fm-prism line-numbers">

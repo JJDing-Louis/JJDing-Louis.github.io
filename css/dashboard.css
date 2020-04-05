@@ -84,6 +84,11 @@ body {
   }
 }
 
+p {
+  font-size: 16px;
+  text-indent: 1em;
+}
+
 /*
  * Navbar
  */

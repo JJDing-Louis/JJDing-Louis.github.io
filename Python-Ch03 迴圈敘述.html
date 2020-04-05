@@ -72,10 +72,7 @@
                 </li>
 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
         </div>
     </nav>
 
@@ -183,13 +180,8 @@
                     <h1 class="h2">Ch03 迴圈敘述</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>                            
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
                     </div>
                 </div>
                 <h2>索引</h2>
@@ -204,9 +196,11 @@
                     </div>       
                     <hr>        
                 </div> <!-- /container -->
+                <p>迴圈敘述(loop statement)表示重複執行某些敘述。迴圈敘述主要分三個條件，分別是"初執運算設定"、"條件運算式"，以及"更新運算式"。在Python的迴圈敘述分別以while和for in range的方式表示。</p>
                 <h3 id="3-1">3-1 while敘述</h3>
-                <p>Python的輸出函式為"print()"，結果會顯示於console上</p>
+                <p></p>
                 <h4>語法:</h4>
+                <p></p>
                 <p>while的迴圈敘述如下:</p>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
@@ -215,8 +209,10 @@
                             主體敘述
                     </code>         
                 </pre>
+                <p>while敘述流程如下:</p>
                 <img src="/imges/fig3-1.JPG" width="720" height="150" >
-                <h4>範例程式</h4>
+                <p></p>
+                <h4>範例程式:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python ">
                         i = 1
@@ -228,12 +224,14 @@
 
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
                         total = 5050
                     </code>         
                 </pre>
+                <P></P>
                 <h3 id="3-2">3-2 for...in range 迴圈</h3>
                 <h4>語法:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
@@ -242,7 +240,7 @@
                     </code>         
                 </pre>
                 <p>表示 i 是從start值開始，直到end-1，中間的過程是每次值step值，若值為 1 ，則可省略。</p>
-                <h4>範例程式</h4>
+                <h4>範例程式:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                         total = 0
@@ -251,13 +249,16 @@
                         print('total = ',total)
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
                         total = 5050
                     </code>         
                 </pre>
+                <p></p>
                 <h3 id="3-3">3-3 巢狀迴圈</h3>
+                <p></p>
                 <p>巢狀迴圈(nested loop)或稱多重迴圈，顧名思義為迴圈內又有一回圈。</p>
                 <h4>語法:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
@@ -268,6 +269,7 @@
                                 /敘述內容2/
                     </code>         
                 </pre>
+                <p></p>
                 <p>若是while迴圈，則:</p>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
@@ -277,8 +279,8 @@
                                 /敘述內容2/
                     </code>         
                 </pre>
-
-                <h4>範例程式</h4>
+                <p></p>
+                <h4>範例程式:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                         print('=====')
@@ -289,6 +291,7 @@
                             print('=====')
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
@@ -330,6 +333,7 @@
                         =====
                     </code>         
                 </pre>
+                <p></p>
                 <p>如果想做一個九九乘法表，可參考以下程式碼:</p>
                 <h4>範例程式:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
@@ -347,6 +351,7 @@
                             print('=', end='')
                     </code>         
                 </pre>
+                <p></p>
                 <h4>輸出結果:</h4>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">

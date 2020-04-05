@@ -30,7 +30,9 @@
 
     <!--字體-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@600&display=swap"
+        rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -47,7 +49,6 @@
                 font-size: 3.5rem;
             }
         }
-        
     </style>
     <!-- Custom styles for this template -->
 
@@ -70,14 +71,11 @@
                     <a class="nav-link" href="https://github.com/JJDing-Louis">GitHub</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/JJDing-Louis/MySoftwareProduct" >Product</a>
+                    <a class="nav-link" href="https://github.com/JJDing-Louis/MySoftwareProduct">Product</a>
                 </li>
 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
         </div>
     </nav>
 
@@ -180,17 +178,15 @@
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Ch01 基本程式設計</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
+
                     </div>
                 </div>
                 <h2>索引</h2>
@@ -203,19 +199,19 @@
                                 <li><a href="#1-1-1">1-1-1 format格式化輸出</a></li>
                                 <li><a href="#1-1-2">1-1-2 %的格式化輸出</a></li>
                             </ul>
-                            <h5><a href="#1-2">1-2 輸入函式</a></h5> 
+                            <h5><a href="#1-2">1-2 輸入函式</a></h5>
                             <h5><a href="#1-3">1-3 算數運算子</a></h5>
                             <h5><a href="#1-4">1-4 算術指定運算子</a></h5>
                             <h5><a href="#1-5">1-5 math數學模組下的函式</a></h5>
-                            <h5><a href="#1-6">1-6  內建的函式</a></h5>                           
-                        </div>                        
+                            <h5><a href="#1-6">1-6 內建的函式</a></h5>
+                        </div>
                     </div>
-        
                     <hr>
-        
                 </div> <!-- /container -->
                 <h3 id="1-1">1-1 函式輸出</h3>
-                <p>Python的輸出函式為"print()"，結果會顯示於console上</p>                 
+                <p></p>
+                <p>Python的輸出函式為"print()"，結果會顯示於螢幕上。</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                         <code class="language-python">
                         a = 123
@@ -230,9 +226,9 @@
                         print('b'=, b)
                         print('c'=, c)
                         </code>         
-                    </pre>
-                </canvas> 
-                <p>執行結果</p>
+                </pre>
+                <p></p>
+                <h5>執行結果:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                         <code class="language-textile">
                         123
@@ -243,7 +239,8 @@
                         c = Python
                         </code>
                 </pre>
-                <p>如果想不換行，可在print()裡面加上 end=' ' </p>
+                <p>如果想不換行，可在print()裡面加上 ，end=' ' </p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                         <code class="language-python">
                         a = 123
@@ -255,13 +252,15 @@
                         print(c)
                         </code>
                     </pre>
-                <p>執行結果</p>
+                <p></p>
+                <h5>執行結果:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                         <code class="language-textile">
                         123 123.456 Python   
                         </code>
                 </pre>
                 <p>end=' ' 裡面亦可加其他字元，作為分隔，例如:"/"</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     a = 123
@@ -273,13 +272,19 @@
                     print(c)
                     </code>
                 </pre>
-                <p>執行結果</p>
+                <h5>執行結果:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                         <code class="language-textile">
                         123/123.456/Python   
                         </code>
                 </pre>
+                <p></p>
                 <h4 id="1-1-1">1-1-1 format格式化輸出</h4>
+                <p></p>
+                <p>print()輸出的結果通常預設向左靠其，如果想要輸出的結果可以根據要求排版，大致上分成兩個方法，第一個方式是format()，另一個方式是用"%"。
+                在format()中，">"為向右靠齊，"<"為想左靠齊，"d"、"f"與"s"分別表示輸出的內容為整數、浮點數與字串。
+                "d"、"f"與"s"前面的數字，表示預設空間為多少位元，"."之後表示要留幾位小數點。</P>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     a = 123
@@ -296,19 +301,22 @@
                     print(format(c, '>10s'))
                     </code>         
                 </pre>
-                <p>執行結果</p>
+                <p></p>
+                <h5>執行結果:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                         <code class="language-textile">
                         123
-                            123.456
+                            123.45
                         Python
 
                         123
-                        123.456
+                        123.45
                             Python
                         </code>
                 </pre>
                 <h4 id="1-1-2">1-1-2 %的格式化輸出</h4>
+                <p></p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     a = 123
@@ -325,19 +333,20 @@
                     print('%-10s'%(c))
                     </code>         
                 </pre>
-                <p>執行結果:</p>
+                <h5>執行結果:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                         <code class="language-textile">
                         123
-                          123.456
+                          123.45
                           Python
 
                         123
-                        123.456
+                        123.45
                         Python
                         </code>
                 </pre>
                 <p>format格式化也可以使用 x、o、b分別以'十六進位'、'八進位'和'二進位'的方式輸出結果。</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     a = 123
@@ -347,7 +356,7 @@
                     print(format(a,'5b'))
                     </code>         
                 </pre>
-                <p>執行結果:</p>
+                <h5>執行結果:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
                         7b    
@@ -355,36 +364,38 @@
                     1111011    
                     </code>
                 </pre>
+                <p></p>
                 <h5>表1-1 轉義字元</h5>
                 <hr>
-                <table class="table text-center col-md-3" border="3" width="20%" cellspacing="5" cellpading="5" >
+                <table class="table text-center col-md-3" border="3" width="20%" cellspacing="5" cellpading="5">
                     <thead class="thead-light">
-                    <tr>
-                        <th>轉義字元</th>
-                        <th>功能說明</th>
-                    </tr>
-                    <tr>
-                        <td>\n</td>
-                        <td>跳行</td>
-                    </tr>
-                    <tr>
-                        <td>\t</td>
-                        <td>跳八格</td>
-                    </tr>
-                    <tr>
-                        <td>\\</td>
-                        <td>\</td>
-                    </tr>
-                    <tr>
-                        <td>\"</td>
-                        <td>"</td>
-                    </tr>
-                    <tr>
-                        <td>\'</td>
-                        <td>'</td>
-                    </tr>
+                        <tr>
+                            <th>轉義字元</th>
+                            <th>功能說明</th>
+                        </tr>
+                        <tr>
+                            <td>\n</td>
+                            <td>跳行</td>
+                        </tr>
+                        <tr>
+                            <td>\t</td>
+                            <td>跳八格</td>
+                        </tr>
+                        <tr>
+                            <td>\\</td>
+                            <td>\</td>
+                        </tr>
+                        <tr>
+                            <td>\"</td>
+                            <td>"</td>
+                        </tr>
+                        <tr>
+                            <td>\'</td>
+                            <td>'</td>
+                        </tr>
                     </thead>
                 </table>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     print('Python\"Kotlin"')
@@ -394,7 +405,8 @@
                     print('Python\nKotlin"')
                     </code>         
                 </pre>
-                <p>執行結果:</p>
+                <p></p>
+                <h5>執行結果:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-textile">
                     Python"Kotlin
@@ -407,6 +419,8 @@
                 </pre>
                 <p>以下由Python執譯器的IDLE操作結果</p>
                 <h3 id="1-2">1-2 輸入函式</h3>
+                <p></p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     >>> s =input()
@@ -420,6 +434,7 @@
                     </code>         
                 </pre>
                 <p>input()函釋回傳的結果是一個字串，而括號裡面可以放任何想在裡面顯式的訊號，例如:</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     >>> a = input('Enter a number: ')
@@ -431,6 +446,7 @@
                 <p>"Enter a number:" 即為顯示的結果。</p>
                 <p></p>
                 <p>如果想將字串轉型為數字，則用int()或者eval()</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     >>> a = int(input('Enter a number: '))
@@ -441,6 +457,7 @@
                     </code>         
                 </pre>
                 <p>若要一次輸入兩個資料時，則在輸入資料時，要加以逗號加以隔開。</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     >>> a, b = eval(input('Enter two number: '))
@@ -449,46 +466,49 @@
                     a = 66, b = 88
                     </code>         
                 </pre>
+                <p></p>
                 <h3 id="1-3">1-3 算數運算子</h3>
+                <p></p>
                 <h5>表1-2 算數運算子</h5>
                 <hr>
-                <table class="table text-center col-md-3" border="3" width="20%" cellspacing="5" cellpading="5" >
+                <table class="table text-center col-md-3" border="3" width="20%" cellspacing="5" cellpading="5">
                     <thead class="thead-light">
-                    <tr>
-                        <th>運算子</th>
-                        <th>功能說明</th>
-                    </tr>
-                    <tr>
-                        <td>+</td>
-                        <td>加</td>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>減</td>
-                    </tr>
-                    <tr>
-                        <td>*</td>
-                        <td>乘</td>
-                    </tr>
-                    <tr>
-                        <td>/</td>
-                        <td>除(結果是浮點數)</td>
-                    </tr>
-                    <tr>
-                        <td>//</td>
-                        <td>除(結果是整數)</td>
-                    </tr>
-                    <tr>
-                        <td>%</td>
-                        <td>兩數相除，取其餘數</td>
-                    </tr>
-                    <tr>
-                        <td>**</td>
-                        <td>次方</td>
-                    </tr>
+                        <tr>
+                            <th>運算子</th>
+                            <th>功能說明</th>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>加</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>減</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>乘</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>除(結果是浮點數)</td>
+                        </tr>
+                        <tr>
+                            <td>//</td>
+                            <td>除(結果是整數)</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>兩數相除，取其餘數</td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>次方</td>
+                        </tr>
                     </thead>
                 </table>
                 <p>注意:運算順序:() > 乘、除 > 加、減</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     >>> a = 100
@@ -512,65 +532,68 @@
                     10.0
                     </code>         
                 </pre>
+                <P></P>
                 <h3 id="1-4">1-4 算術指定運算子</h3>
+                <p></p>
                 <h5>表1-3 子字串運算子</h5>
                 <hr>
-                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5" >
+                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5">
                     <thead class="thead-light">
-                    <tr>
-                        <th>算術指定運算子</th>
-                        <th>範例</th>
-                        <th>相當於</th>
-                        <th>結果</th>
-                    </tr>
-                    <tr>
-                        <td>+=</td>
-                        <td>a+=2</td>
-                        <td>a=a+2</td>
-                        <td>102</td>
-                    </tr>
-                    <tr>
-                        <td>-=</td>
-                        <td>a-=2</td>
-                        <td>a=a-2</td>
-                        <td>98</td>
-                    </tr>
-                    <tr>
-                        <td>*=</td>
-                        <td>a*=2</td>
-                        <td>a=a*2</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <td>/=</td>
-                        <td>a/=3</td>
-                        <td>a=a/3</td>
-                        <td>33.3333333333336</td>
-                    </tr>
-                    <tr>
-                        <td>//=</td>
-                        <td>a//=3</td>
-                        <td>a=a//3</td>
-                        <td>33</td>
-                    </tr>
-                    <tr>
-                        <td>%=</td>
-                        <td>a%=3</td>
-                        <td>a=a%3</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>**=</td>
-                        <td>a**=2</td>
-                        <td>a=a**2</td>
-                        <td>10000</td>
-                    </tr>
+                        <tr>
+                            <th>算術指定運算子</th>
+                            <th>範例</th>
+                            <th>相當於</th>
+                            <th>結果</th>
+                        </tr>
+                        <tr>
+                            <td>+=</td>
+                            <td>a+=2</td>
+                            <td>a=a+2</td>
+                            <td>102</td>
+                        </tr>
+                        <tr>
+                            <td>-=</td>
+                            <td>a-=2</td>
+                            <td>a=a-2</td>
+                            <td>98</td>
+                        </tr>
+                        <tr>
+                            <td>*=</td>
+                            <td>a*=2</td>
+                            <td>a=a*2</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>/=</td>
+                            <td>a/=3</td>
+                            <td>a=a/3</td>
+                            <td>33.3333333333336</td>
+                        </tr>
+                        <tr>
+                            <td>//=</td>
+                            <td>a//=3</td>
+                            <td>a=a//3</td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>%=</td>
+                            <td>a%=3</td>
+                            <td>a=a%3</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>**=</td>
+                            <td>a**=2</td>
+                            <td>a=a**2</td>
+                            <td>10000</td>
+                        </tr>
                     </thead>
                 </table>
                 <h3 id="1-5">1-5 math數學模組下的函式</h3>
                 <p>使用math數學模組，在一開始要import math</p>
-                <p> &pi;=3.14159 => math.pi</p>
+                <p> &pi; = 3.14159 => math.pi</p>
                 <p> e => math.e</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                     >>> import math
@@ -582,6 +605,7 @@
                     </code>         
                 </pre>
                 <p>因此，要計算元面積就容易多了~</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
                         import math
@@ -589,115 +613,118 @@
                         perimeter = 2 * math.pi * r
                     </code>         
                 </pre>
-                <p>執行結果:</p>
-                <pre class="wp-block-fm-prism line-numbers">
-                    <code class="language-textile">
-                        area = 
-                        perimeter =
-                    </code>
-                </pre>
+                <p></p>
                 <h5>表1-4 math數學模組常用的函式</h5>
                 <hr>
-                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5" >
+                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5">
                     <thead class="thead-light">
-                    <tr>
-                        <th>函式</th>
-                        <th>功能</th>
-                        <th>範例</th>
-                    </tr>   
-                    <tr>
-                        <td>ceil(x)</td>
-                        <td>大於x的最小整數</td>
-                        <td>math.ceil(3.2) = 4</td>
-                    </tr>
-                    <tr>
-                        <td>floor(x)</td>
-                        <td>小於x的最小整數</td>
-                        <td>math.floor(3.2) = 3</td>
-                    </tr>                    
+                        <tr>
+                            <th>函式</th>
+                            <th>功能</th>
+                            <th>範例</th>
+                        </tr>
+                        <tr>
+                            <td>ceil(x)</td>
+                            <td>大於x的最小整數</td>
+                            <td>math.ceil(3.2) = 4</td>
+                        </tr>
+                        <tr>
+                            <td>floor(x)</td>
+                            <td>小於x的最小整數</td>
+                            <td>math.floor(3.2) = 3</td>
+                        </tr>
                         <td>fabs(x)</td>
                         <td>浮點數x的絕對值</td>
                         <td>math.fabs(-123.45) = 123.45</td>
-                    </tr>                    
+                        </tr>
                         <td>exp(x)</td>
                         <td>e<sup>x</sup></td>
                         <td>math.exp(2) = 7.38905609893065</td>
-                    </tr>                    
+                        </tr>
                         <td>log(x)</td>
                         <td>log<sub>e</sub>(x)</td>
                         <td>math.lig(10) = 2.302585092994046</td>
-                    </tr>                    
+                        </tr>
                         <td>log(x, base)</td>
                         <td>log<sub>base</sub>(x)</td>
                         <td>math.log(100,10) = 2.0</td>
-                    </tr>                    
+                        </tr>
                         <td>sqrt(x)</td>
                         <td>x<sup>0.5</sup></td>
                         <td>math.sqrt(100) = 10.0</td>
-                    </tr>
+                        </tr>
                     </thead>
                 </table>
                 <h5>表1-5 math數學模組三角函式</h5>
                 <hr>
-                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5" >
+                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5">
                     <thead class="thead-light">
-                    <tr>
-                        <th>函式</th>
-                        <th>功能</th>
-                    </tr>   
-                    <tr>
-                        <td>sin(x)</td>
-                        <td>度數為 x 的 sin 函式</td>                        
-                    </tr>
-                    <tr>
-                        <td>cos(x)</td>
-                        <td>度數為 x 的 cos 函式</td>                        
-                    </tr>                    
+                        <tr>
+                            <th>函式</th>
+                            <th>功能</th>
+                        </tr>
+                        <tr>
+                            <td>sin(x)</td>
+                            <td>度數為 x 的 sin 函式</td>
+                        </tr>
+                        <tr>
+                            <td>cos(x)</td>
+                            <td>度數為 x 的 cos 函式</td>
+                        </tr>
                         <td>tan(x)</td>
-                        <td>度數為 x 的 tan 函式</td>                        
-                    </tr>                    
+                        <td>度數為 x 的 tan 函式</td>
+                        </tr>
                         <td>asin(x)</td>
-                        <td>度數為 x 的 asin 函式</td>                        
-                    </tr>                    
+                        <td>度數為 x 的 asin 函式</td>
+                        </tr>
                         <td>acos(x)</td>
-                        <td>度數為 x 的 acos 函式</td>                        
-                    </tr>                    
+                        <td>度數為 x 的 acos 函式</td>
+                        </tr>
                         <td>atan(x, base)</td>
                         <td>度數為 x 的 atan 函式</td>
                     </thead>
                 </table>
-                <p>以下範例</p>
+                <h5>範例程式:</h5>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
-                        /code/
+                        >>> imprt math
+                        >>> math.sin(0)
+                        0.0
+                        >>> math.sin(math.pi/2)
+                        1.0
+                        /*sin(0) 等於 0，sin(&pi;/2) 等於 1*/
+                        >>> math.cos(math.pi/2)
+                        >>> 6.123233995736766e-17
+                        >>> math.cos(0)
+                        1.0
                     </code>         
                 </pre>
                 <h3 id="1-6">1-6 Python內建的函式</h3>
                 <h5>表1-6 Python 內建函式</h5>
                 <hr>
-                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5" >
+                <table class="table text-center col-5 " border="3" width="50%" cellspacing="5" cellpading="5">
                     <thead class="thead-light">
-                    <tr>
-                        <th>函式</th>
-                        <th>功能</th>
-                    </tr>   
-                    <tr>
-                        <td>abs(x)</td>
-                        <td>度數為 x 的 sin 函式</td>                        
-                    </tr>
-                    <tr>
-                        <td>max(x<sub>1</sub>, x<sub>2</sub>, ...,x<sub>n</sub>)</td>
-                        <td>計算(x<sub>1</sub>, x<sub>2</sub>, ...,x<sub>n</sub>)的最大值</td>                        
-                    </tr>                    
+                        <tr>
+                            <th>函式</th>
+                            <th>功能</th>
+                        </tr>
+                        <tr>
+                            <td>abs(x)</td>
+                            <td>度數為 x 的 sin 函式</td>
+                        </tr>
+                        <tr>
+                            <td>max(x<sub>1</sub>, x<sub>2</sub>, ...,x<sub>n</sub>)</td>
+                            <td>計算(x<sub>1</sub>, x<sub>2</sub>, ...,x<sub>n</sub>)的最大值</td>
+                        </tr>
                         <td>min(x<sub>1</sub>, x<sub>2</sub>, ...,x<sub>n</sub>)</td>
-                        <td>計算(x<sub>1</sub>, x<sub>2</sub>, ...,x<sub>n</sub>)的最小值</td>                        
-                    </tr>                    
+                        <td>計算(x<sub>1</sub>, x<sub>2</sub>, ...,x<sub>n</sub>)的最小值</td>
+                        </tr>
                         <td>pow(x,y)</td>
-                        <td>計算 x<sup>y</sup></td>                        
-                    </tr>                    
+                        <td>計算 x<sup>y</sup></td>
+                        </tr>
                         <td>round(x)</td>
-                        <td>計算做接近x的整數。若與兩樹接近的話，則回傳偶數的整數</td>                        
-                    </tr>                    
+                        <td>計算做接近x的整數。若與兩樹接近的話，則回傳偶數的整數</td>
+                        </tr>
                         <td>round(x, n)</td>
                         <td>計算捨味道小數點後n位的浮點數</td>
                     </thead>
@@ -705,7 +732,26 @@
                 <p>以下範例</p>
                 <pre class="wp-block-fm-prism line-numbers">
                     <code class="language-python">
-                        /code/
+                        >>> abs(-100)
+                        100
+                        >>> max(22, 33, 11, 88, 99, 66)
+                        99
+                        >>> min(22, 33, 11, 88, 99, 66)
+                        11
+                        >>> pow(2, 10)
+                        1024
+                        >>> round(5, 6)
+                        6
+                        >>> round(5, 2)
+                        5
+                        >>> round(4.6)
+                        5
+                        >>> round(4.5)
+                        4
+                        >>> round(123.456, 2)
+                        123.46
+                        >>> round(123.456, 1)
+                        123.5
                     </code>         
                 </pre>
             </main>
@@ -719,7 +765,7 @@
         integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-   
+
     <script src="/javascripts/dashboard.js"></script>
     <!--程式碼的js-->
     <script src="/javascripts/prism.js"></script>
