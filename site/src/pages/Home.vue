@@ -1,14 +1,17 @@
 <template>
-  <section class="hero">
-    <h1 class="hero__title">JJNET</h1>
-    <p class="hero__sub">Software Developer Notes & Portfolio</p>
+    <section class="home-hero">
+        <div class="home-hero__content">
+            <p class="home-hero__eyebrow">JJNET PERSONAL SITE</p>
+            <h1 class="home-hero__title">JJNET</h1>
+            <p class="home-hero__subtitle">Software Developer Notes &amp; Portfolio</p>
 
-    <div class="hero__actions">
-      <RouterLink to="/notes" class="btn">程式筆記</RouterLink>
-      <RouterLink to="/github" class="btn">GitHub</RouterLink>
-      <RouterLink to="/projects" class="btn">作品</RouterLink>
-    </div>
-  </section>
+            <div class="home-hero__actions">
+                <RouterLink to="/notes" class="ui-button ui-button--primary">程式筆記</RouterLink>
+                <RouterLink to="/github" class="ui-button">GitHub</RouterLink>
+                <RouterLink to="/projects" class="ui-button">作品</RouterLink>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup lang="ts">

@@ -1,33 +1,48 @@
-.hero{
-  padding:40px 0 10px;
-  text-align:center;
+:root {
+    --color-bg: #f7f7f8;
+    --color-surface: #ffffff;
+    --color-surface-soft: #f4f4f5;
+    --color-border: #e5e7eb;
+    --color-border-strong: #d1d5db;
+    --color-text: #111827;
+    --color-text-muted: #4b5563;
+    --color-accent: #eb0a1e;
+    --color-accent-strong: #c30014;
+    --shadow-soft: 0 8px 24px rgba(17, 24, 39, 0.06);
+    --shadow-hover: 0 12px 28px rgba(17, 24, 39, 0.12);
+    font-family: "Noto Sans TC", "Segoe UI", "Microsoft JhengHei", sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.hero__title{
-  font-size:44px;
-  margin:0 0 8px;
+* {
+    box-sizing: border-box;
 }
 
-.hero__sub{
-  margin:0;
-  opacity:.7;
+html,
+body,
+#app {
+    margin: 0;
+    min-height: 100%;
 }
 
-.hero__actions{
-  margin-top:26px;
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
+body {
+    min-width: 320px;
+    background:
+        linear-gradient(180deg, rgba(17, 24, 39, 0.56) 0%, rgba(17, 24, 39, 0.2) 34%, rgba(247, 247, 248, 0.96) 70%),
+        url("/img/bg/office-workstation.jpg");
+    background-color: var(--color-bg);
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: scroll, fixed;
 }
 
-.btn{
-  border:1px solid #e5e7eb;
-  background:#fff;
-  padding:10px 14px;
-  border-radius:12px;
-}
-
-.btn:hover{
-  transform: translateY(-1px);
+a {
+    color: inherit;
+    text-decoration: none;
 }

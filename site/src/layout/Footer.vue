@@ -1,10 +1,8 @@
 <template>
-  <footer class="footer">
-    <span class="text">
-      Copyright © 2015 TS AUTOS |
-      建議使用 IE10 以上 或 Chrome 瀏覽器
-      (個人學習筆記用,相關影像資訊來自網路各網站,如有侵權請告知,即刻刪除處理)
-    </span>
-  </footer>
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__text">JJNET Personal Website</p>
+            <p class="footer__text">Software Developer Notes &amp; Portfolio</p>
+        </div>
+    </footer>
 </template>
-

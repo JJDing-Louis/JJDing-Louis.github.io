@@ -1,17 +1,18 @@
 <template>
-  <header class="nav">
-    <RouterLink to="/" class="brand">JJNET</RouterLink>
+    <header class="navbar">
+        <div class="container navbar__inner">
+            <RouterLink to="/" class="navbar__brand">JJNET</RouterLink>
 
-    <nav class="links">
-      <RouterLink to="/about" class="link">關於我</RouterLink>
-      <RouterLink to="/notes" class="link">程式筆記</RouterLink>
-      <!-- 這兩個你舊站是外連 GitHub 與作品 repo :contentReference[oaicite:4]{index=4} -->
-      <a class="link" href="https://github.com/JJDing-Louis" target="_blank" rel="noreferrer">GitHub</a>
-      <a class="link" href="https://github.com/JJDing-Louis/MySoftwareProduct" target="_blank" rel="noreferrer">作品</a>
-    </nav>
-  </header>
+            <nav class="navbar__links" aria-label="Main Navigation">
+                <RouterLink to="/about" class="navbar__link">關於我</RouterLink>
+                <RouterLink to="/notes" class="navbar__link">程式筆記</RouterLink>
+                <RouterLink to="/github" class="navbar__link">GitHub</RouterLink>
+                <RouterLink to="/projects" class="navbar__link">作品</RouterLink>
+            </nav>
+        </div>
+    </header>
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import { RouterLink } from 'vue-router'
 </script>
