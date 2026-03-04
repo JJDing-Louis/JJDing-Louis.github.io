@@ -1,0 +1,35 @@
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.navbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:56px;
+}
+
+.navbar__brand{
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.navbar__links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.navbar__link{
+  padding:6px 10px;
+  border-radius:10px;
+}
+
+.navbar__link.router-link-active{
+  background:#f3f4f6;
+  font-weight:700;
+}

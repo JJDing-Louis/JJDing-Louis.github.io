@@ -1,3 +1,9 @@
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
 .app{
   min-height:100vh;
   display:flex;
@@ -6,20 +12,5 @@
 
 .main{
   flex:1;
-  padding:20px;
-  max-width:1100px;
-  width:100%;
-  margin:0 auto;
-}
-
-.layout{
-  display:grid;
-  grid-template-columns:240px 1fr;
-  gap:20px;
-}
-
-@media (max-width:900px){
-  .layout{
-    grid-template-columns:1fr;
-  }
+  padding:30px 0;
 }

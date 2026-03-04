@@ -1,18 +1,33 @@
-*{
-  box-sizing:border-box;
+.hero{
+  padding:40px 0 10px;
+  text-align:center;
 }
 
-body{
+.hero__title{
+  font-size:44px;
+  margin:0 0 8px;
+}
+
+.hero__sub{
   margin:0;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background:#fafafa;
+  opacity:.7;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+.hero__actions{
+  margin-top:26px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
-h1,h2,h3{
-  margin-top:0;
+.btn{
+  border:1px solid #e5e7eb;
+  background:#fff;
+  padding:10px 14px;
+  border-radius:12px;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
 }
