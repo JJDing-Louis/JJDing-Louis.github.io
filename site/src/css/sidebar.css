@@ -1,0 +1,15 @@
+.side{
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:14px;
+  background:white;
+}
+
+.side .title{
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.side ul{
+  padding-left:18px;
+}
