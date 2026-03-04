@@ -1,35 +1,42 @@
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:#fff;
-  border-bottom:1px solid #e5e7eb;
-}
+/* 對應目前 DOM：header.nav / a.brand / nav.links / a.link */
 
-.navbar__inner{
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  height:56px;
+  gap:16px;
+
+  padding: 14px 20px;
 }
 
-.navbar__brand{
-  font-weight:900;
-  letter-spacing:.5px;
+.brand{
+  font-weight: 900;
+  letter-spacing: .5px;
+  text-decoration: none;
+  color: inherit;
 }
 
-.navbar__links{
+.links{
   display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.navbar__link{
-  padding:6px 10px;
-  border-radius:10px;
+.link{
+  padding: 6px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
 }
 
-.navbar__link.router-link-active{
+/* Vue Router 的 active class 會加在 RouterLink 上 */
+.link.router-link-active{
   background:#f3f4f6;
   font-weight:700;
 }
