@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
 import AppHeader from "@/components/layout/AppHeader.vue";
 import AppFooter from "@/components/layout/AppFooter.vue";
 import AppMenu from "@/components/navigation/AppMenu.vue";
@@ -31,14 +32,17 @@ import { navigationZhTw } from "@/data/navigation/navigation.zh-TW";
 import { navigationEn } from "@/data/navigation/navigation.en";
 import { useLocaleSwitch } from "@/composables/useLocaleSwitch";
 
+const router = useRouter();
 const { t } = useI18n();
-const { currentLocale, alternateLocale, switchLocale, switchPath } = useLocaleSwitch();
+const { currentLocale, alternateLocale, resolvePathForLocale, switchLocale, switchPath } = useLocaleSwitch();
 
 const menuItems = computed(() => (currentLocale.value === "zh-TW" ? navigationZhTw : navigationEn));
 
 const toggleLocale = () => {
-  switchLocale(alternateLocale.value);
-  window.location.assign(switchPath.value);
+  const nextLocale = alternateLocale.value;
+  const nextPath = resolvePathForLocale(nextLocale);
+  switchLocale(nextLocale);
+  void router.push(nextPath);
 };
 </script>
 

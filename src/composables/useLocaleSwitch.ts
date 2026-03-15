@@ -7,15 +7,20 @@ export const useLocaleSwitch = () => {
   const { locale } = useI18n();
   const route = useRoute();
 
-  const currentLocale = computed(() => locale.value as AppLocale);
+  const resolvePathForLocale = (nextLocale: AppLocale): string => {
+    const normalizedPath = route.path.startsWith("/en/") ? route.path.slice(3) : route.path;
+    const basePath = normalizedPath === "" ? "/" : normalizedPath;
+
+    return nextLocale === "en" ? `/en${basePath === "/" ? "" : basePath}` : basePath;
+  };
+
+  const currentLocale = computed<AppLocale>(() =>
+    route.path === "/en" || route.path.startsWith("/en/") ? "en" : "zh-TW"
+  );
   const alternateLocale = computed<AppLocale>(() =>
     currentLocale.value === "zh-TW" ? "en" : "zh-TW"
   );
-
-  const switchPath = computed(() => {
-    const path = route.path.replace(/^\/en/, "") || "/";
-    return alternateLocale.value === "en" ? `/en${path === "/" ? "" : path}` : path;
-  });
+  const switchPath = computed(() => resolvePathForLocale(alternateLocale.value));
 
   const switchLocale = (nextLocale: AppLocale) => {
     locale.value = nextLocale;
@@ -24,6 +29,7 @@ export const useLocaleSwitch = () => {
   return {
     currentLocale,
     alternateLocale,
+    resolvePathForLocale,
     switchLocale,
     switchPath
   };
