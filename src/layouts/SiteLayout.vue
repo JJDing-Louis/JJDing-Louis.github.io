@@ -34,14 +34,13 @@ import { useLocaleSwitch } from "@/composables/useLocaleSwitch";
 
 const router = useRouter();
 const { t } = useI18n();
-const { currentLocale, alternateLocale, resolvePathForLocale, switchLocale, switchPath } = useLocaleSwitch();
+const { currentLocale, alternateLocale, resolvePathForLocale, switchPath } = useLocaleSwitch();
 
 const menuItems = computed(() => (currentLocale.value === "zh-TW" ? navigationZhTw : navigationEn));
 
 const toggleLocale = () => {
   const nextLocale = alternateLocale.value;
   const nextPath = resolvePathForLocale(nextLocale);
-  switchLocale(nextLocale);
   void router.push(nextPath);
 };
 </script>
