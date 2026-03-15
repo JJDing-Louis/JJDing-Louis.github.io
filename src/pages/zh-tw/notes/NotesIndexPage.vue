@@ -3,33 +3,52 @@
     <header>
       <p>Learning Note</p>
       <h2>分類總覽</h2>
+      <p>依照你原始規格整理成語言、資料庫與其他三大群組，並保留子分類擴充空間。</p>
     </header>
-    <div class="notes-grid">
-      <article v-for="group in groups" :key="group.id" class="notes-card">
-        <h3>
-          <RouterLink :to="`/notes/${group.id}`">{{ group.name }}</RouterLink>
-        </h3>
-        <p>{{ groupDescription(group.id) }}</p>
-      </article>
-    </div>
+
+    <details
+      v-for="group in groupedCategories"
+      :key="group.id"
+      class="notes-accordion"
+      :open="group.id === 'language'"
+    >
+      <summary class="notes-accordion__summary">
+        <span>{{ group.title }}</span>
+        <span class="notes-accordion__hint">點擊收合 / 展開</span>
+      </summary>
+      <div class="notes-accordion__content">
+        <div class="notes-grid">
+          <article v-for="category in group.categories" :key="category.id" class="notes-card">
+            <h3><RouterLink :to="`/notes/${category.id}`">{{ category.name }}</RouterLink></h3>
+            <ul class="notes-subcategory-list">
+              <li v-for="child in category.children" :key="child.id">
+                <RouterLink :to="`/notes/${child.id}`">{{ child.name }}</RouterLink>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </details>
   </section>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
 import { RouterLink } from "vue-router";
-import { getCategoriesByLocale } from "@/services/content/contentQueryService";
+import { getCategoryTreeByLocale } from "@/services/content/contentQueryService";
 
-const groups = computed(() => getCategoriesByLocale("zh-TW"));
-
-const descriptions: Record<string, string> = {
-  python: "查看 Python 教學與章節筆記。",
-  csharp: "保留 C# 類別入口，後續可持續擴充內容。",
-  java: "保留 Java 類別入口，後續可持續擴充內容。",
-  database: "查看資料庫相關筆記分類。",
-  other: "查看 Git、PowerShell 等其他主題。"
+const labels: Record<string, string> = {
+  language: "程式語言",
+  database: "資料庫",
+  other: "其他"
 };
 
-const groupDescription = (categoryId: string) =>
-  descriptions[categoryId] ?? "查看此分類的教學筆記。";
+const groupedCategories = computed(() => {
+  const roots = getCategoryTreeByLocale("zh-TW");
+  return ["language", "database", "other"].map((groupId) => ({
+    id: groupId,
+    title: labels[groupId],
+    categories: roots.filter((category) => category.topicGroup === groupId)
+  }));
+});
 </script>

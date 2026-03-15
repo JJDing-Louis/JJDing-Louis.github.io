@@ -18,7 +18,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch01 基本程式設計",
     summary: "介紹 Python 基本輸出、輸入與基礎語法。",
     path: "/notes/python/ch01-basic-programming",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh01ZhTw
   },
   {
@@ -27,7 +27,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch02 選擇敘述",
     summary: "整理 if、elif、else 等選擇敘述基礎。",
     path: "/notes/python/ch02-conditional-statements",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh02ZhTw
   },
   {
@@ -36,7 +36,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch03 迴圈敘述",
     summary: "介紹 for、while 與迴圈控制。",
     path: "/notes/python/ch03-loops",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh03ZhTw
   },
   {
@@ -45,7 +45,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch04 進階流程控制",
     summary: "整理進階流程控制與程式結構。",
     path: "/notes/python/ch04-advanced-flow-control",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh04ZhTw
   },
   {
@@ -54,7 +54,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch05 函式",
     summary: "介紹函式定義、參數與回傳值。",
     path: "/notes/python/ch05-functions",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh05ZhTw
   },
   {
@@ -63,7 +63,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch06 串列",
     summary: "整理串列的建立、操作與常用方法。",
     path: "/notes/python/ch06-lists",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh06ZhTw
   },
   {
@@ -72,7 +72,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch07 數組、集合、辭典",
     summary: "介紹 tuple、set 與 dictionary 的基本觀念。",
     path: "/notes/python/ch07-tuples-sets-dictionaries",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh07ZhTw
   },
   {
@@ -81,7 +81,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch08 字串",
     summary: "整理字串操作、格式化與常見函式。",
     path: "/notes/python/ch08-strings",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh08ZhTw
   },
   {
@@ -90,7 +90,7 @@ const zhPythonArticles: ArticleRecord[] = [
     title: "Python Ch09 檔案與異常處理",
     summary: "介紹檔案讀寫與異常處理基礎。",
     path: "/notes/python/ch09-files-and-exceptions",
-    categoryIds: ["python"],
+    categoryIds: ["python-basic"],
     body: legacyPythonBodies.pythonCh09ZhTw
   }
 ];
@@ -126,3 +126,4 @@ const logs: ArticleRecord[] = [
 ];
 
 export const articles = [...logs, ...zhPythonArticles, ...enPythonArticles];
+

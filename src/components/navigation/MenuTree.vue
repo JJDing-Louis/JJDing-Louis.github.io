@@ -1,17 +1,25 @@
 <template>
   <ul class="menu-tree">
     <li v-for="item in items" :key="item.id" class="menu-tree__item">
-      <a class="menu-tree__link" :href="item.targetPath ?? '#'">{{ item.label }}</a>
-      <ul v-if="item.children?.length" class="menu-tree__children">
-        <li v-for="child in item.children" :key="child.id">
-          <a class="menu-tree__link" :href="child.targetPath ?? '#'">{{ child.label }}</a>
-        </li>
-      </ul>
+      <RouterLink v-if="item.targetPath && item.targetPath.startsWith('/')" class="menu-tree__link" :to="item.targetPath">
+        {{ item.label }}
+      </RouterLink>
+      <a v-else-if="item.targetPath" class="menu-tree__link" :href="item.targetPath" target="_blank" rel="noreferrer">
+        {{ item.label }}
+      </a>
+      <span v-else class="menu-tree__label">{{ item.label }}</span>
+      <MenuTree v-if="item.children?.length" :items="item.children" class="menu-tree__children" />
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  name: "MenuTree"
+});
+
+import { RouterLink } from "vue-router";
+
 interface MenuNode {
   id: string;
   label: string;
@@ -23,16 +31,12 @@ defineProps<{ items: MenuNode[] }>();
 </script>
 
 <style scoped>
-.menu-tree,
-.menu-tree__children {
+.menu-tree {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.menu-tree {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.7rem;
 }
 
 .menu-tree__item {
@@ -41,12 +45,15 @@ defineProps<{ items: MenuNode[] }>();
 }
 
 .menu-tree__children {
-  display: grid;
-  gap: 0.4rem;
   padding-left: 1rem;
 }
 
-.menu-tree__link {
+.menu-tree__link,
+.menu-tree__label {
   color: var(--color-text);
+}
+
+.menu-tree__label {
+  font-weight: 700;
 }
 </style>
