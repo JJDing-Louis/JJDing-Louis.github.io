@@ -4,7 +4,7 @@ export const navigationEn: NavigationItem[] = [
   { id: "home", parentId: null, order: 1, label: "Home", targetPath: "/en", itemType: "internal-page", visible: true },
   { id: "logs", parentId: null, order: 2, label: "Logs", targetPath: "/en/logs", itemType: "internal-page", visible: true },
   { id: "notes", parentId: null, order: 3, label: "Learning Note", targetPath: null, itemType: "group", visible: true },
-  { id: "notes-language", parentId: "notes", order: 1, label: "Programming", targetPath: "/en/notes", itemType: "group", visible: true },
+  { id: "notes-language", parentId: "notes", order: 1, label: "Programming", targetPath: "/en/notes/language", itemType: "group", visible: true },
   { id: "notes-python", parentId: "notes-language", order: 1, label: "Python", targetPath: "/en/notes/python", itemType: "group", visible: true },
   { id: "notes-python-basic", parentId: "notes-python", order: 1, label: "Basics", targetPath: "/en/notes/python-basic", itemType: "internal-page", visible: true },
   { id: "notes-python-django", parentId: "notes-python", order: 2, label: "Django", targetPath: "/en/notes/python-django", itemType: "internal-page", visible: true },

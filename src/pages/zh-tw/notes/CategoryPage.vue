@@ -18,7 +18,7 @@
       </div>
     </section>
 
-    <section v-if="articles.length" class="notes-section">
+    <section v-if="showArticles" class="notes-section">
       <header class="notes-section__header">
         <h3>文章列表</h3>
       </header>
@@ -49,7 +49,12 @@ const route = useRoute();
 const categoryId = computed(() => String(route.params.categoryId ?? "python"));
 const category = computed(() => getCategoryById("zh-TW", categoryId.value));
 const title = computed(() => category.value?.name ?? categoryId.value);
-const intro = computed(() => `目前顯示 ${title.value} 的子分類與可閱讀文章。`);
 const childCategories = computed(() => getChildCategories("zh-TW", categoryId.value));
 const articles = computed(() => getArticlesByCategory("zh-TW", categoryId.value));
+const showArticles = computed(() => !childCategories.value.length && articles.value.length > 0);
+const intro = computed(() =>
+  childCategories.value.length
+    ? `目前顯示 ${title.value} 的子分類。`
+    : `目前顯示 ${title.value} 的可閱讀文章。`
+);
 </script>

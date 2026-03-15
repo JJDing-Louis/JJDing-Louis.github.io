@@ -14,6 +14,12 @@ describe("navigation data", () => {
   });
 
   it("preserves the requested learning note hierarchy", () => {
+    expect(getCategoryById("zh-TW", "language")?.name).toBe("程式語言");
+    expect(getChildCategories("zh-TW", "language").map((item) => item.id)).toEqual([
+      "python",
+      "csharp",
+      "java"
+    ]);
     expect(getCategoryById("zh-TW", "python")?.name).toBe("Python");
     expect(getChildCategories("zh-TW", "python").map((item) => item.id)).toEqual([
       "python-basic",

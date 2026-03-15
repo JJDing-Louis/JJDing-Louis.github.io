@@ -23,6 +23,6 @@ defineProps<{
 .product-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 </style>

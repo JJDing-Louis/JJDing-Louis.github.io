@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
     "markdown-it": "^14.1.0",
     "vue": "^3.5.13",
     "vue-i18n": "^10.0.5",

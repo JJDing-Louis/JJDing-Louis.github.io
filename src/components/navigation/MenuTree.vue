@@ -3,22 +3,13 @@
     <li v-for="item in items" :key="item.id" class="menu-tree__item">
       <div v-if="item.children?.length" class="menu-tree__group">
         <div class="menu-tree__group-header">
-          <button
-            type="button"
-            class="menu-tree__toggle"
-            :aria-expanded="isOpen(item)"
-            :aria-controls="`${item.id}-children`"
-            @click="toggleGroup(item.id)"
-          >
-            <span class="menu-tree__toggle-icon" :class="{ 'menu-tree__toggle-icon--open': isOpen(item) }">▸</span>
-            <span class="menu-tree__summary-text">{{ item.label }}</span>
-          </button>
           <RouterLink
             v-if="item.targetPath && item.targetPath.startsWith('/')"
             class="menu-tree__group-link"
             :to="item.targetPath"
+            @click="expandGroup(item.id)"
           >
-            &rarr;
+            {{ item.label }}
           </RouterLink>
           <a
             v-else-if="item.targetPath"
@@ -26,9 +17,20 @@
             :href="item.targetPath"
             target="_blank"
             rel="noreferrer"
+            @click="expandGroup(item.id)"
           >
-            &rarr;
+            {{ item.label }}
           </a>
+          <button
+            v-else
+            type="button"
+            class="menu-tree__toggle"
+            :aria-expanded="isOpen(item)"
+            :aria-controls="`${item.id}-children`"
+            @click="toggleGroup(item.id)"
+          >
+            <span class="menu-tree__summary-text">{{ item.label }}</span>
+          </button>
         </div>
         <MenuTree v-if="isOpen(item)" :id="`${item.id}-children`" :items="item.children" class="menu-tree__children" />
       </div>
@@ -82,8 +84,23 @@ props.items.forEach((item) => {
 
 const isOpen = (item: MenuNode): boolean => expandedState[item.id] ?? false;
 
+const collapseSiblingGroups = (activeId: string): void => {
+  props.items.forEach((item) => {
+    if (item.id !== activeId && item.children?.length) {
+      expandedState[item.id] = false;
+    }
+  });
+};
+
 const toggleGroup = (id: string): void => {
-  expandedState[id] = !expandedState[id];
+  const nextState = !expandedState[id];
+  collapseSiblingGroups(id);
+  expandedState[id] = nextState;
+};
+
+const expandGroup = (id: string): void => {
+  collapseSiblingGroups(id);
+  expandedState[id] = true;
 };
 </script>
 
@@ -109,19 +126,20 @@ const toggleGroup = (id: string): void => {
 .menu-tree__group-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0;
 }
 
 .menu-tree__toggle {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.45rem;
+  width: 100%;
   padding: 0;
   border: none;
   background: transparent;
   font: inherit;
   color: var(--color-text);
   cursor: pointer;
+  text-align: left;
 }
 
 .menu-tree__summary-text {
@@ -130,18 +148,9 @@ const toggleGroup = (id: string): void => {
   font-weight: 700;
 }
 
-.menu-tree__toggle-icon {
-  font-size: 0.85rem;
-  transition: transform 0.2s ease;
-}
-
-.menu-tree__toggle-icon--open {
-  transform: rotate(90deg);
-}
-
 .menu-tree__group-link {
-  color: var(--color-muted);
-  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 700;
 }
 
 .menu-tree__children {

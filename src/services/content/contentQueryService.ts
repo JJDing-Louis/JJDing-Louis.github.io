@@ -19,10 +19,35 @@ export interface CategoryTreeNode extends LocalizedCategory {
   children: CategoryTreeNode[];
 }
 
+const virtualGroupCategories: Record<string, Record<AppLocale, LocalizedCategory>> = {
+  language: {
+    "zh-TW": {
+      id: "language",
+      parentCategoryId: null,
+      name: "程式語言",
+      topicGroup: "language",
+      slug: "language",
+      order: 0
+    },
+    en: {
+      id: "language",
+      parentCategoryId: null,
+      name: "Programming",
+      topicGroup: "language",
+      slug: "language",
+      order: 0
+    }
+  }
+};
+
 const sortByOrder = <T extends { order: number; name?: string }>(items: T[]) =>
   [...items].sort((left, right) => left.order - right.order || (left.name ?? "").localeCompare(right.name ?? ""));
 
 const localizeCategory = (locale: AppLocale, categoryId: string): LocalizedCategory | null => {
+  if (categoryId in virtualGroupCategories) {
+    return virtualGroupCategories[categoryId][locale];
+  }
+
   const category = categories.find((item) => item.id === categoryId);
 
   if (!category) {
@@ -68,7 +93,13 @@ export const getCategoryById = (locale: AppLocale, categoryId: string) =>
 export const getChildCategories = (locale: AppLocale, parentCategoryId: string | null) =>
   sortByOrder(
     categories
-      .filter((item) => item.parentCategoryId === parentCategoryId)
+      .filter((item) => {
+        if (parentCategoryId === "language") {
+          return item.parentCategoryId === null && item.topicGroup === "language";
+        }
+
+        return item.parentCategoryId === parentCategoryId;
+      })
       .map((item) => ({
         id: item.id,
         parentCategoryId: item.parentCategoryId,
@@ -95,7 +126,10 @@ export const getLogEntriesByLocale = (locale: AppLocale) =>
   articles.filter((article) => article.locale === locale && article.path.includes(locale === "zh-TW" ? "/logs/" : "/en/logs/"));
 
 export const getArticlesByCategory = (locale: AppLocale, categoryId: string) => {
-  const matchedIds = new Set([categoryId, ...collectDescendantIds(categoryId)]);
+  const matchedIds =
+    categoryId === "language"
+      ? new Set(categories.filter((item) => item.topicGroup === "language").map((item) => item.id))
+      : new Set([categoryId, ...collectDescendantIds(categoryId)]);
 
   return articles.filter(
     (article) => article.locale === locale && article.categoryIds.some((item) => matchedIds.has(item))

@@ -18,7 +18,7 @@
       </div>
     </section>
 
-    <section v-if="articles.length" class="notes-section">
+    <section v-if="showArticles" class="notes-section">
       <header class="notes-section__header">
         <h3>Articles</h3>
       </header>
@@ -49,7 +49,12 @@ const route = useRoute();
 const categoryId = computed(() => String(route.params.categoryId ?? "python"));
 const category = computed(() => getCategoryById("en", categoryId.value));
 const title = computed(() => category.value?.name ?? categoryId.value);
-const intro = computed(() => `Showing subcategories and available articles for ${title.value}.`);
 const childCategories = computed(() => getChildCategories("en", categoryId.value));
 const articles = computed(() => getArticlesByCategory("en", categoryId.value));
+const showArticles = computed(() => !childCategories.value.length && articles.value.length > 0);
+const intro = computed(() =>
+  childCategories.value.length
+    ? `Showing subcategories for ${title.value}.`
+    : `Showing available articles for ${title.value}.`
+);
 </script>
