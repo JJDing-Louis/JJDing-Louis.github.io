@@ -13,6 +13,8 @@ defineProps<{ text: string }>();
   padding-top: 1rem;
   color: var(--color-muted);
   font-size: 0.95rem;
+  border-top: 1px solid rgba(106, 128, 138, 0.14);
+  margin-top: 1.5rem;
 }
 
 .app-footer p {

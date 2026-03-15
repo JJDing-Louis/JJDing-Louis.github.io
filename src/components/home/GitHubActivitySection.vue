@@ -30,11 +30,12 @@ defineProps<{
 <style scoped>
 .home-card {
   display: grid;
-  gap: 0.9rem;
-  padding: 1.5rem;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.72);
+  gap: 1rem;
+  padding: 1.65rem;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 250, 249, 0.9));
   border: 1px solid var(--color-border);
+  box-shadow: 0 18px 38px rgba(24, 47, 72, 0.06);
 }
 
 .home-card__eyebrow,
@@ -51,11 +52,30 @@ defineProps<{
   letter-spacing: 0.1em;
 }
 
+.home-card__title {
+  letter-spacing: -0.02em;
+}
+
+.home-card__text,
+.home-card__list {
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.home-card__list {
+  padding-left: 1.1rem;
+}
+
+.home-card__list a {
+  color: var(--color-accent-strong);
+}
+
 .home-card__graph {
   width: 100%;
   min-height: 140px;
   object-fit: cover;
   border-radius: 18px;
   border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.78);
 }
 </style>

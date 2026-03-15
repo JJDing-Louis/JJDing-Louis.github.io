@@ -57,20 +57,43 @@ const toggleLocale = () => {
   padding: 2rem;
   border-radius: var(--radius-xl);
   border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 253, 252, 0.82));
   box-shadow: var(--shadow-panel);
   backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-layout__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 170px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 157, 148, 0.14),
+      rgba(53, 102, 214, 0.08) 34%,
+      rgba(255, 143, 107, 0.08) 62%,
+      transparent 84%
+    );
+  pointer-events: none;
 }
 
 .site-layout__switch {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 3.5rem;
   padding: 0.65rem 0.9rem;
   border-radius: 999px;
-  background: var(--color-accent);
+  background:
+    linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-strong) 52%, var(--color-accent-warm) 100%);
   color: white;
+  box-shadow: 0 12px 26px rgba(53, 102, 214, 0.2);
+  z-index: 1;
 }
 
 .site-layout__body {
@@ -83,10 +106,13 @@ const toggleLocale = () => {
 .site-layout__sidebar {
   position: sticky;
   top: 2rem;
+  z-index: 1;
 }
 
 .site-layout__content {
   min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {

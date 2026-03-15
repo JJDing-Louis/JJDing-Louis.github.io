@@ -18,6 +18,8 @@ defineProps<{ title: string }>();
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .app-header__eyebrow {
@@ -31,5 +33,7 @@ defineProps<{ title: string }>();
 .app-header__title {
   margin: 0.35rem 0 0;
   font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+  color: var(--color-heading);
 }
 </style>

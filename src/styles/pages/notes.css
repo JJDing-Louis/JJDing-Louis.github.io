@@ -15,8 +15,9 @@
 .notes-accordion {
   border: 1px solid var(--color-border);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.68);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 249, 248, 0.9));
   overflow: hidden;
+  box-shadow: 0 16px 36px rgba(24, 47, 72, 0.06);
 }
 
 .notes-accordion__summary {
@@ -54,7 +55,8 @@
   padding: 1rem;
   border-radius: 20px;
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(246, 250, 249, 0.88));
+  box-shadow: 0 14px 32px rgba(24, 47, 72, 0.06);
 }
 
 .notes-card h3,

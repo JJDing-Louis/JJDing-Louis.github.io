@@ -110,7 +110,7 @@ const expandGroup = (id: string): void => {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 0.7rem;
+  gap: 0.45rem;
 }
 
 .menu-tree__item {
@@ -133,7 +133,8 @@ const expandGroup = (id: string): void => {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
   border: none;
   background: transparent;
   font: inherit;
@@ -151,18 +152,42 @@ const expandGroup = (id: string): void => {
 .menu-tree__group-link {
   color: var(--color-text);
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
 }
 
 .menu-tree__children {
-  padding-left: 1rem;
+  padding-left: 0.95rem;
+  border-left: 1px solid rgba(29, 139, 133, 0.18);
+  margin-left: 0.5rem;
 }
 
 .menu-tree__link,
 .menu-tree__label {
   color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .menu-tree__label {
   font-weight: 700;
+}
+
+.menu-tree__toggle:hover,
+.menu-tree__group-link:hover,
+.menu-tree__link:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  transform: translateX(2px);
 }
 </style>
