@@ -3,7 +3,7 @@ name: 部署 GitHub Pages
 on:
   push:
     branches:
-      - RefectorBranchV1
+      - master
   workflow_dispatch:
 
 permissions:
