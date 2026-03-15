@@ -1,3 +1,4 @@
+import { legacyPythonBodies } from "@/data/content/legacyPythonBodies";
 import type { AppLocale } from "@/router/types";
 
 export interface ArticleRecord {
@@ -18,7 +19,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "介紹 Python 基本輸出、輸入與基礎語法。",
     path: "/notes/python/ch01-basic-programming",
     categoryIds: ["python"],
-    body: "<h1>Python Ch01 基本程式設計</h1><p>此頁整理 Python 基本輸出、輸入與基礎語法，作為舊版 HTML 教學的新版入口。</p>"
+    body: legacyPythonBodies.pythonCh01ZhTw
   },
   {
     id: "python-ch02",
@@ -27,7 +28,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "整理 if、elif、else 等選擇敘述基礎。",
     path: "/notes/python/ch02-conditional-statements",
     categoryIds: ["python"],
-    body: "<h1>Python Ch02 選擇敘述</h1><p>此頁整理 if、elif、else 等選擇敘述的重點。</p>"
+    body: legacyPythonBodies.pythonCh02ZhTw
   },
   {
     id: "python-ch03",
@@ -36,7 +37,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "介紹 for、while 與迴圈控制。",
     path: "/notes/python/ch03-loops",
     categoryIds: ["python"],
-    body: "<h1>Python Ch03 迴圈敘述</h1><p>此頁整理 for、while 與迴圈控制流程。</p>"
+    body: legacyPythonBodies.pythonCh03ZhTw
   },
   {
     id: "python-ch04",
@@ -45,7 +46,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "整理進階流程控制與程式結構。",
     path: "/notes/python/ch04-advanced-flow-control",
     categoryIds: ["python"],
-    body: "<h1>Python Ch04 進階流程控制</h1><p>此頁整理進階流程控制與結構化寫法。</p>"
+    body: legacyPythonBodies.pythonCh04ZhTw
   },
   {
     id: "python-ch05",
@@ -54,7 +55,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "介紹函式定義、參數與回傳值。",
     path: "/notes/python/ch05-functions",
     categoryIds: ["python"],
-    body: "<h1>Python Ch05 函式</h1><p>此頁整理函式設計、參數與回傳值。</p>"
+    body: legacyPythonBodies.pythonCh05ZhTw
   },
   {
     id: "python-ch06",
@@ -63,7 +64,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "整理串列的建立、操作與常用方法。",
     path: "/notes/python/ch06-lists",
     categoryIds: ["python"],
-    body: "<h1>Python Ch06 串列</h1><p>此頁整理 list 的建立、操作與常用方法。</p>"
+    body: legacyPythonBodies.pythonCh06ZhTw
   },
   {
     id: "python-ch07",
@@ -72,7 +73,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "介紹 tuple、set 與 dictionary 的基本觀念。",
     path: "/notes/python/ch07-tuples-sets-dictionaries",
     categoryIds: ["python"],
-    body: "<h1>Python Ch07 數組、集合、辭典</h1><p>此頁整理 tuple、set 與 dictionary 的使用觀念。</p>"
+    body: legacyPythonBodies.pythonCh07ZhTw
   },
   {
     id: "python-ch08",
@@ -81,7 +82,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "整理字串操作、格式化與常見函式。",
     path: "/notes/python/ch08-strings",
     categoryIds: ["python"],
-    body: "<h1>Python Ch08 字串</h1><p>此頁整理字串操作、格式化與常用技巧。</p>"
+    body: legacyPythonBodies.pythonCh08ZhTw
   },
   {
     id: "python-ch09",
@@ -90,7 +91,7 @@ const zhPythonArticles: ArticleRecord[] = [
     summary: "介紹檔案讀寫與異常處理基礎。",
     path: "/notes/python/ch09-files-and-exceptions",
     categoryIds: ["python"],
-    body: "<h1>Python Ch09 檔案與異常處理</h1><p>此頁整理檔案處理與例外處理的基本概念。</p>"
+    body: legacyPythonBodies.pythonCh09ZhTw
   }
 ];
 
@@ -100,7 +101,7 @@ const enPythonArticles: ArticleRecord[] = zhPythonArticles.map((article) => ({
   title: article.title.replace("基本程式設計", "Basic Programming").replace("選擇敘述", "Conditional Statements").replace("迴圈敘述", "Loops").replace("進階流程控制", "Advanced Flow Control").replace("函式", "Functions").replace("串列", "Lists").replace("數組、集合、辭典", "Tuples, Sets, and Dictionaries").replace("字串", "Strings").replace("檔案與異常處理", "Files and Exceptions"),
   summary: `English entry for ${article.title}`,
   path: `/en${article.path}`,
-  body: `<h1>${article.title}</h1><p>English placeholder entry for the migrated Python lesson.</p>`
+  body: `<h1>${article.title}</h1><p>The original Chinese note has been restored in the Traditional Chinese section. This English page is currently a placeholder entry.</p>`
 }));
 
 const logs: ArticleRecord[] = [

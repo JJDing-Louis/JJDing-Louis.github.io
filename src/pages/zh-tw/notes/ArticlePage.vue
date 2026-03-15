@@ -2,10 +2,11 @@
   <section class="notes-page">
     <header>
       <p>Article</p>
-      <h2>{{ article?.title }}</h2>
+      <h2>{{ article?.title ?? "找不到文章" }}</h2>
     </header>
     <ArticleRenderer>
       <div v-if="article" v-html="article.body"></div>
+      <p v-else>這篇筆記目前不存在或尚未完成搬移。</p>
     </ArticleRenderer>
   </section>
 </template>

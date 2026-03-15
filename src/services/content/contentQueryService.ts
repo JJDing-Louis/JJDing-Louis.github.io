@@ -18,6 +18,22 @@ export const getCategoriesByLocale = (locale: AppLocale) =>
     order: category.order
   }));
 
+export const getCategoryById = (locale: AppLocale, categoryId: string) => {
+  const category = categories.find((item) => item.id === categoryId);
+
+  if (!category) {
+    return null;
+  }
+
+  return {
+    id: category.id,
+    name: category.names[locale],
+    topicGroup: category.topicGroup,
+    slug: category.slug,
+    order: category.order
+  };
+};
+
 export const getArticlesByLocale = (locale: AppLocale) =>
   articles.filter((article) => article.locale === locale);
 

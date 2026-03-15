@@ -6,7 +6,7 @@
     </header>
     <div class="notes-grid">
       <article v-for="item in articles" :key="item.id" class="notes-card">
-        <h3><a :href="item.path">{{ item.title }}</a></h3>
+        <h3><RouterLink :to="item.path">{{ item.title }}</RouterLink></h3>
         <p>{{ item.summary }}</p>
       </article>
     </div>
@@ -15,11 +15,11 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute } from "vue-router";
-import { getArticlesByCategory } from "@/services/content/contentQueryService";
+import { RouterLink, useRoute } from "vue-router";
+import { getArticlesByCategory, getCategoryById } from "@/services/content/contentQueryService";
 
 const route = useRoute();
 const categoryId = computed(() => String(route.params.categoryId ?? "python"));
-const title = computed(() => categoryId.value);
+const title = computed(() => getCategoryById("en", categoryId.value)?.name ?? categoryId.value);
 const articles = computed(() => getArticlesByCategory("en", categoryId.value));
 </script>
