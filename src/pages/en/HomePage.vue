@@ -1,0 +1,40 @@
+<template>
+  <div class="home-page-grid">
+    <ProfileSummarySection title="Experience" :intro="model.profile.intro" :work-experience="model.profile.workExperience" />
+    <LanguageSummarySection title="Primary Languages" :items="model.profile.primaryLanguages" />
+    <GitHubActivitySection
+      title="Recent GitHub Activity"
+      :message="model.githubActivity.fallbackMessage ?? 'Showing latest public data'"
+      :repositories="model.githubActivity.repositories"
+      :contribution-graph-url="model.githubActivity.contributionGraphUrl"
+      graph-alt="GitHub contributions graph"
+    />
+    <HomeCategoryEntrySection title="Explore" :entries="model.categoryEntries" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { onMounted, reactive } from "vue";
+import ProfileSummarySection from "@/components/home/ProfileSummarySection.vue";
+import LanguageSummarySection from "@/components/home/LanguageSummarySection.vue";
+import GitHubActivitySection from "@/components/home/GitHubActivitySection.vue";
+import HomeCategoryEntrySection from "@/components/home/HomeCategoryEntrySection.vue";
+import { getHomePageModel } from "@/services/home/homePageService";
+import { profileEn } from "@/data/profile/profile.en";
+import { githubFallback } from "@/data/github/githubFallback";
+
+const model = reactive({
+  profile: profileEn,
+  githubActivity: githubFallback,
+  categoryEntries: [
+    { label: "Logs", description: "Markdown posts and updates", href: "/en/logs" },
+    { label: "Learning Note", description: "Programming, database, and tool notes", href: "/en/notes" },
+    { label: "Product", description: "Project summaries and links", href: "/en/products" }
+  ]
+});
+
+onMounted(async () => {
+  const nextModel = await getHomePageModel("en");
+  Object.assign(model, nextModel);
+});
+</script>

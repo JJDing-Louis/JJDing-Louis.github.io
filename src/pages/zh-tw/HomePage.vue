@@ -1,0 +1,40 @@
+<template>
+  <div class="home-page-grid">
+    <ProfileSummarySection title="工作經歷" :intro="model.profile.intro" :work-experience="model.profile.workExperience" />
+    <LanguageSummarySection title="常用程式語言" :items="model.profile.primaryLanguages" />
+    <GitHubActivitySection
+      title="GitHub 最近活動"
+      :message="model.githubActivity.fallbackMessage ?? '顯示最新公開資料'"
+      :repositories="model.githubActivity.repositories"
+      :contribution-graph-url="model.githubActivity.contributionGraphUrl"
+      graph-alt="GitHub contributions graph"
+    />
+    <HomeCategoryEntrySection title="分類入口" :entries="model.categoryEntries" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { onMounted, reactive } from "vue";
+import ProfileSummarySection from "@/components/home/ProfileSummarySection.vue";
+import LanguageSummarySection from "@/components/home/LanguageSummarySection.vue";
+import GitHubActivitySection from "@/components/home/GitHubActivitySection.vue";
+import HomeCategoryEntrySection from "@/components/home/HomeCategoryEntrySection.vue";
+import { getHomePageModel } from "@/services/home/homePageService";
+import { profileZhTw } from "@/data/profile/profile.zh-TW";
+import { githubFallback } from "@/data/github/githubFallback";
+
+const model = reactive({
+  profile: profileZhTw,
+  githubActivity: githubFallback,
+  categoryEntries: [
+    { label: "日誌", description: "Markdown 文章與更新紀錄", href: "/logs" },
+    { label: "Learning Note", description: "程式語言、資料庫與工具筆記", href: "/notes" },
+    { label: "Product", description: "作品摘要與連結入口", href: "/products" }
+  ]
+});
+
+onMounted(async () => {
+  const nextModel = await getHomePageModel("zh-TW");
+  Object.assign(model, nextModel);
+});
+</script>
