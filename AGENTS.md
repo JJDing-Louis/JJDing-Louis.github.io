@@ -1,25 +1,29 @@
 # Repository Guidelines
 
-## 專案結構與模組配置
-此倉庫為靜態個人網站，網站入口與共用片段位於根目錄，例如 `index.html`、`header.html`、`footer.html`、`aside.html`。共用樣式與腳本集中在 `css/Common/`、`js/Common/`，頁面專屬檔案則使用對應名稱，例如 `css/index.css`、`js/index.js`。程式筆記頁面放在 `html/ProgramNote/...`，圖片資源放在 `img/`，規格與規劃文件放在 `specs/` 與 `.specify/`。
+## Project Structure & Module Organization
+此倉庫是靜態個人網站。根目錄的 `index.html`、`header.html`、`footer.html`、`aside.html` 為主要頁面與共用片段。樣式放在 `css/`，依頁面或功能分層，例如 `css/Common/`、`css/ProgramNote/Basic/Python/`。腳本放在 `js/`，第三方函式庫如 jQuery、Bootstrap 也直接存放於此。內容頁集中在 `html/ProgramNote/...`，圖片與 Logo 放在 `img/`，需求與檢查清單放在 `specs/`。
 
-## 建置、測試與開發指令
-本專案沒有 `npm`、`make` 或建置流程，開發時直接在倉庫根目錄啟動靜態伺服器：
+## Build, Test, and Development Commands
+此專案不需要編譯流程，直接以靜態伺服器預覽即可。
 
-```powershell
-python -m http.server 8000
-```
+- `python -m http.server 8000`：在專案根目錄啟動本機伺服器。
+- `start http://localhost:8000`：於 Windows 開啟瀏覽器預覽首頁。
+- `git status`：提交前確認是否只包含預期修改。
 
-接著開啟 `http://localhost:8000` 檢查頁面導覽、共用片段載入與靜態資源路徑。若環境沒有 Python，可改用 VS Code Live Server 或其他靜態伺服器。
+若使用 VS Code，也可用 Live Server 預覽；提交前請至少手動檢查首頁與受影響頁面。
 
-## 程式風格與命名規範
-HTML、CSS、JavaScript 一律使用 2 個空白縮排，格式需與既有檔案一致。可重用邏輯放在 `css/Common/` 或 `js/Common/`，頁面專屬內容應放在對應頁面旁。檔名應清楚反映內容與位置，例如 `html/ProgramNote/Basic/Python/...`。所有文件說明與程式碼註解請使用繁體中文；除非必要，不要使用英文敘述。
+## Coding Style & Naming Conventions
+HTML、CSS、JavaScript 目前以 2 空白縮排為主，花括號多採換行風格，請維持既有格式。檔名以功能或頁面名稱命名，例如 `programnoteoutline.html`、`Python-Ch01 基本程式設計.html`。新增資源時，優先沿用既有資料夾分層；共用邏輯放 `js/Common/`，共用樣式放 `css/Common/`。
 
-## 測試指引
-目前沒有自動化測試。每次修改後請以本機靜態伺服器手動驗證，重點包含版面是否正常、導覽連結是否失效、共用頁首頁尾是否載入、圖片與腳本路徑是否正確。若有新增或修改內容頁，需確認其相對路徑可正確開啟。
+## Testing Guidelines
+目前沒有自動化測試框架，驗證以人工檢查為主。修改後請確認：
 
-## Commit 與 Pull Request 規範
-近期提交以簡短、聚焦的主旨為主。後續 `commit message` 請統一使用中文，並以祈使句描述可見變更，例如 `修正首頁導覽連結路徑`。Pull Request 需附上變更摘要、影響頁面或目錄、手動測試結果；若涉及介面調整，請附上截圖。若工作對應 `specs/` 內文件，請一併註明。
+- 導覽、側邊欄與共用片段可正常載入。
+- 受影響頁面的連結、圖片與樣式路徑正確。
+- `specs/001-portfolio-site-refactor/` 內的檢查項目若有涉及本次修改，需一併對照。
 
-## 安全與設定注意事項
-請使用相對路徑引用本機資源，以維持 GitHub Pages 相容性。不要提交密鑰、權杖或機器專屬設定。`css/bootstrap_css/`、`js/bootstrap_js/`、`js/jquery/` 內檔案視為第三方資源，除非是明確升級版本，否則不要直接修改。
+## Commit & Pull Request Guidelines
+Git 歷史同時存在中文描述與簡短英文提交，例如 `移除不必要得連結與修正路徑`、`Start Refactor`。後續請統一使用精簡中文提交訊息，直接描述變更內容，例如 `修正首頁側邊欄載入路徑`。Pull Request 應包含變更摘要、影響頁面、手動驗證結果；若涉及版面調整，附上截圖。
+
+## Security & Configuration Tips
+`.env` 屬本機設定，不要在文件或提交中暴露敏感資訊。新增圖片、函式庫或 HTML 頁面時，優先使用相對路徑，避免部署到 GitHub Pages 後發生資源失效。
