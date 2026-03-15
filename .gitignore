@@ -22,3 +22,5 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
+.spectra/
+openspec/.vector-search.db*

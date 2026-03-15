@@ -8,10 +8,14 @@
           </a>
         </template>
       </AppHeader>
-      <AppMenu :items="menuItems" :label="t('navLabel')" />
-      <section class="site-layout__content">
-        <slot />
-      </section>
+      <div class="site-layout__body">
+        <aside class="site-layout__sidebar">
+          <AppMenu :items="menuItems" :label="t('navLabel')" />
+        </aside>
+        <section class="site-layout__content">
+          <slot />
+        </section>
+      </div>
       <AppFooter :text="t('footerText')" />
     </div>
   </div>
@@ -65,7 +69,38 @@ const toggleLocale = () => {
   color: white;
 }
 
+.site-layout__body {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.site-layout__sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
 .site-layout__content {
-  padding: 2rem 0;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .site-layout {
+    padding: 1rem;
+  }
+
+  .site-layout__panel {
+    padding: 1.5rem;
+  }
+
+  .site-layout__body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .site-layout__sidebar {
+    position: static;
+  }
 }
 </style>

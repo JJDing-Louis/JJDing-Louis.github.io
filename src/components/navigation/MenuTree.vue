@@ -1,14 +1,44 @@
 <template>
   <ul class="menu-tree">
     <li v-for="item in items" :key="item.id" class="menu-tree__item">
-      <RouterLink v-if="item.targetPath && item.targetPath.startsWith('/')" class="menu-tree__link" :to="item.targetPath">
+      <div v-if="item.children?.length" class="menu-tree__group">
+        <div class="menu-tree__group-header">
+          <button
+            type="button"
+            class="menu-tree__toggle"
+            :aria-expanded="isOpen(item)"
+            :aria-controls="`${item.id}-children`"
+            @click="toggleGroup(item.id)"
+          >
+            <span class="menu-tree__toggle-icon" :class="{ 'menu-tree__toggle-icon--open': isOpen(item) }">▸</span>
+            <span class="menu-tree__summary-text">{{ item.label }}</span>
+          </button>
+          <RouterLink
+            v-if="item.targetPath && item.targetPath.startsWith('/')"
+            class="menu-tree__group-link"
+            :to="item.targetPath"
+          >
+            &rarr;
+          </RouterLink>
+          <a
+            v-else-if="item.targetPath"
+            class="menu-tree__group-link"
+            :href="item.targetPath"
+            target="_blank"
+            rel="noreferrer"
+          >
+            &rarr;
+          </a>
+        </div>
+        <MenuTree v-if="isOpen(item)" :id="`${item.id}-children`" :items="item.children" class="menu-tree__children" />
+      </div>
+      <RouterLink v-else-if="item.targetPath && item.targetPath.startsWith('/')" class="menu-tree__link" :to="item.targetPath">
         {{ item.label }}
       </RouterLink>
       <a v-else-if="item.targetPath" class="menu-tree__link" :href="item.targetPath" target="_blank" rel="noreferrer">
         {{ item.label }}
       </a>
       <span v-else class="menu-tree__label">{{ item.label }}</span>
-      <MenuTree v-if="item.children?.length" :items="item.children" class="menu-tree__children" />
     </li>
   </ul>
 </template>
@@ -18,7 +48,9 @@ defineOptions({
   name: "MenuTree"
 });
 
+import { reactive } from "vue";
 import { RouterLink } from "vue-router";
+import { useRoute } from "vue-router";
 
 interface MenuNode {
   id: string;
@@ -27,7 +59,32 @@ interface MenuNode {
   children?: MenuNode[];
 }
 
-defineProps<{ items: MenuNode[] }>();
+const props = defineProps<{ items: MenuNode[] }>();
+
+const route = useRoute();
+const expandedState = reactive<Record<string, boolean>>({});
+
+const isCurrentBranch = (item: MenuNode): boolean => {
+  if (item.targetPath?.startsWith("/") && route.path.startsWith(item.targetPath)) {
+    return true;
+  }
+
+  return item.children?.some((child) => isCurrentBranch(child)) ?? false;
+};
+
+const shouldOpen = (item: MenuNode): boolean => item.id === "notes" || isCurrentBranch(item);
+
+props.items.forEach((item) => {
+  if (item.children?.length) {
+    expandedState[item.id] = shouldOpen(item);
+  }
+});
+
+const isOpen = (item: MenuNode): boolean => expandedState[item.id] ?? false;
+
+const toggleGroup = (id: string): void => {
+  expandedState[id] = !expandedState[id];
+};
 </script>
 
 <style scoped>
@@ -42,6 +99,49 @@ defineProps<{ items: MenuNode[] }>();
 .menu-tree__item {
   display: grid;
   gap: 0.45rem;
+}
+
+.menu-tree__group {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.menu-tree__group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-tree__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.menu-tree__summary-text {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.menu-tree__toggle-icon {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.menu-tree__toggle-icon--open {
+  transform: rotate(90deg);
+}
+
+.menu-tree__group-link {
+  color: var(--color-muted);
+  font-size: 0.9rem;
 }
 
 .menu-tree__children {
