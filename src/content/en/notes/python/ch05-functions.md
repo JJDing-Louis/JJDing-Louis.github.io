@@ -5,7 +5,7 @@ title: Python Ch05 Functions
 summary: Introduces function definitions, parameters, and return values.
 slug: ch05-functions
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

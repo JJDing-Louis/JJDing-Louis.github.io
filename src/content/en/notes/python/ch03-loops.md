@@ -5,7 +5,7 @@ title: Python Ch03 Loops
 summary: Introduces for, while, and loop control.
 slug: ch03-loops
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

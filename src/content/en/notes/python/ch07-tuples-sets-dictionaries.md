@@ -5,7 +5,7 @@ title: Python Ch07 Tuples, Sets, and Dictionaries
 summary: Introduces tuples, sets, and dictionaries.
 slug: ch07-tuples-sets-dictionaries
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

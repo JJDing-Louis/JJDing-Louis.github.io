@@ -5,7 +5,7 @@ title: Python Ch08 Strings
 summary: Covers string operations, formatting, and common helpers.
 slug: ch08-strings
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

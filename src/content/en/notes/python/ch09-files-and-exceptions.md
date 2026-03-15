@@ -5,7 +5,7 @@ title: Python Ch09 Files and Exceptions
 summary: Introduces file handling and exception basics.
 slug: ch09-files-and-exceptions
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

@@ -5,7 +5,7 @@ title: Python Ch01 Basic Programming
 summary: Introduces Python output, input, and basic syntax.
 slug: ch01-basic-programming
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

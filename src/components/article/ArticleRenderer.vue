@@ -102,12 +102,8 @@ const buildLineMarkup = (html: string): string => {
 
   return lines
     .map(
-      (line, index) => `
-        <span class="code-block-card__line">
-          <span class="code-block-card__line-number">${index + 1}</span>
-          <span class="code-block-card__line-content">${escapeLineContent(line)}</span>
-        </span>
-      `
+      (line, index) =>
+        `<span class="code-block-card__line"><span class="code-block-card__line-number">${index + 1}</span><span class="code-block-card__line-content">${escapeLineContent(line)}</span></span>`
     )
     .join("");
 };
@@ -201,6 +197,9 @@ onUpdated(() => {
 }
 
 .article-renderer :deep(.code-block-card) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   border: 1px solid rgba(71, 85, 105, 0.55);
   border-radius: 1.2rem;
@@ -252,20 +251,24 @@ onUpdated(() => {
 }
 
 .article-renderer :deep(.code-block-card__body) {
+  box-sizing: border-box;
+  width: 100%;
   padding: 0.75rem 1rem 0.9rem;
   background: transparent;
 }
 
 .article-renderer :deep(.code-block-card__body code) {
-  display: block;
-  min-width: max-content;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  white-space: normal;
 }
 
 .article-renderer :deep(.code-block-card__line) {
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr);
-  gap: 0.75rem;
-  align-items: start;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: baseline;
 }
 
 .article-renderer :deep(.code-block-card__line-number) {
@@ -275,14 +278,15 @@ onUpdated(() => {
 }
 
 .article-renderer :deep(.code-block-card__line-content) {
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-word;
   color: #e5eefc;
 }
 
 .article-renderer :deep(code) {
   font-family: "Consolas", "Courier New", monospace;
   font-size: 0.98rem;
-  line-height: 1.45;
+  line-height: 1.2;
 }
 
 .article-renderer :deep(.hljs) {
@@ -337,7 +341,7 @@ onUpdated(() => {
 
   .article-renderer :deep(.code-block-card__line) {
     grid-template-columns: 2.25rem minmax(0, 1fr);
-    gap: 0.65rem;
+    gap: 0.45rem;
   }
 }
 </style>

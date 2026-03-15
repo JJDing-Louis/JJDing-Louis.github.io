@@ -5,7 +5,7 @@ title: Python Ch06 Lists
 summary: Covers list creation, manipulation, and common methods.
 slug: ch06-lists
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

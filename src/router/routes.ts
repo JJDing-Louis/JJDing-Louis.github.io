@@ -1,11 +1,28 @@
 import type { RouteRecordRaw } from "vue-router";
 import type { AppRouteMeta } from "./types";
+import { articles } from "@/data/content/articles";
+import { pageRegistry } from "@/data/navigation/pageRegistry";
 
 const routeMeta = (locale: AppRouteMeta["locale"], pageId: string) => ({
   locale,
   pageId,
   layout: "site"
 }) as Record<string, unknown>;
+
+const legacyRoutes: RouteRecordRaw[] = [
+  ...pageRegistry.flatMap((page) =>
+    (page.legacyPaths ?? []).map((legacyPath) => ({
+      path: legacyPath,
+      redirect: page.path
+    }))
+  ),
+  ...articles.flatMap((article) =>
+    article.legacyPaths.map((legacyPath) => ({
+      path: legacyPath,
+      redirect: article.path
+    }))
+  )
+];
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -79,5 +96,6 @@ export const routes: RouteRecordRaw[] = [
     name: "products-en",
     component: () => import("@/pages/en/products/ProductIndexPage.vue"),
     meta: routeMeta("en", "products")
-  }
+  },
+  ...legacyRoutes
 ];

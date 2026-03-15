@@ -5,7 +5,7 @@ title: Python Ch04 Advanced Flow Control
 summary: Covers advanced flow control and program structure.
 slug: ch04-advanced-flow-control
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis

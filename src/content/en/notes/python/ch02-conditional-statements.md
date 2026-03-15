@@ -5,7 +5,7 @@ title: Python Ch02 Conditional Statements
 summary: Covers if, elif, and else statements.
 slug: ch02-conditional-statements
 categoryIds:
-  - python
+  - python-basic
 publishedAt: 2026-03-15
 updatedAt: 2026-03-15
 author: JJDing-Louis
