@@ -38,6 +38,18 @@ export const routes: RouteRecordRaw[] = [
     meta: routeMeta("en", "home")
   },
   {
+    path: "/about",
+    name: "about-zh-tw",
+    component: () => import("@/pages/zh-tw/about/AboutPage.vue"),
+    meta: routeMeta("zh-TW", "about")
+  },
+  {
+    path: "/en/about",
+    name: "about-en",
+    component: () => import("@/pages/en/about/AboutPage.vue"),
+    meta: routeMeta("en", "about")
+  },
+  {
     path: "/logs",
     name: "logs-zh-tw",
     component: () => import("@/pages/zh-tw/logs/LogIndexPage.vue"),

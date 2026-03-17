@@ -27,6 +27,7 @@ const model = reactive({
   profile: profileEn,
   githubActivity: githubFallback,
   categoryEntries: [
+    { label: "About me", description: "Resume-style overview, strengths, and project links", href: "/en/about" },
     { label: "Logs", description: "Markdown posts and updates", href: "/en/logs" },
     { label: "Learning Note", description: "Programming, database, and tool notes", href: "/en/notes" },
     { label: "Product", description: "Project summaries and links", href: "/en/products" }

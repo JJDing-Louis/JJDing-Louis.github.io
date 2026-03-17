@@ -1,7 +1,7 @@
 <template>
   <section class="notes-page">
     <header>
-      <p>Learning Note</p>
+      <p>學習筆記</p>
       <h2>分類總覽</h2>
       <p>依照你原始規格整理成語言、資料庫與其他三大群組，並保留子分類擴充空間。</p>
     </header>

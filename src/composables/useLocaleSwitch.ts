@@ -16,6 +16,10 @@ export const useLocaleSwitch = () => {
       return localePrefix || "/";
     }
 
+    if (routeName.includes("about")) {
+      return `${localePrefix}/about`;
+    }
+
     if (routeName.includes("logs")) {
       return `${localePrefix}/logs` || "/logs";
     }

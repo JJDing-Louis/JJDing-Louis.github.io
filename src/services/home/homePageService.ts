@@ -11,9 +11,10 @@ export interface HomeCategoryEntry {
 
 const categoryEntries: Record<AppLocale, HomeCategoryEntry[]> = {
   "zh-TW": [
+    { label: "關於我", description: "履歷摘要、技術定位與作品導覽", href: "/about" },
     { label: "日誌", description: "Markdown 文章與更新紀錄", href: "/logs" },
-    { label: "Learning Note", description: "程式語言、資料庫與工具筆記", href: "/notes" },
-    { label: "Product", description: "作品摘要與連結入口", href: "/products" }
+    { label: "學習筆記", description: "程式語言、資料庫與工具筆記", href: "/notes" },
+    { label: "Side Project", description: "作品摘要與連結入口", href: "/products" }
   ],
   en: [
     { label: "Logs", description: "Markdown posts and updates", href: "/en/logs" },

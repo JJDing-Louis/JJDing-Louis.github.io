@@ -2,8 +2,9 @@ import type { NavigationItem } from "./navigation.zh-TW";
 
 export const navigationEn: NavigationItem[] = [
   { id: "home", parentId: null, order: 1, label: "Home", targetPath: "/en", itemType: "internal-page", visible: true },
-  { id: "logs", parentId: null, order: 2, label: "Logs", targetPath: "/en/logs", itemType: "internal-page", visible: true },
-  { id: "notes", parentId: null, order: 3, label: "Learning Note", targetPath: null, itemType: "group", visible: true },
+  { id: "about", parentId: null, order: 2, label: "About me", targetPath: "/en/about", itemType: "internal-page", visible: true },
+  { id: "logs", parentId: null, order: 3, label: "Logs", targetPath: "/en/logs", itemType: "internal-page", visible: true },
+  { id: "notes", parentId: null, order: 4, label: "Learning Note", targetPath: null, itemType: "group", visible: true },
   { id: "notes-language", parentId: "notes", order: 1, label: "Programming", targetPath: "/en/notes/language", itemType: "group", visible: true },
   { id: "notes-python", parentId: "notes-language", order: 1, label: "Python", targetPath: "/en/notes/python", itemType: "group", visible: true },
   { id: "notes-python-basic", parentId: "notes-python", order: 1, label: "Basics", targetPath: "/en/notes/python-basic", itemType: "internal-page", visible: true },
@@ -28,6 +29,6 @@ export const navigationEn: NavigationItem[] = [
   { id: "notes-other", parentId: "notes", order: 3, label: "Other", targetPath: "/en/notes/other", itemType: "group", visible: true },
   { id: "notes-other-git", parentId: "notes-other", order: 1, label: "Git", targetPath: "/en/notes/other-git", itemType: "internal-page", visible: true },
   { id: "notes-other-powershell", parentId: "notes-other", order: 2, label: "PowerShell", targetPath: "/en/notes/other-powershell", itemType: "internal-page", visible: true },
-  { id: "products", parentId: null, order: 4, label: "Product", targetPath: "/en/products", itemType: "internal-page", visible: true },
-  { id: "github", parentId: null, order: 5, label: "GitHub", targetPath: "https://github.com/JJDing-Louis", itemType: "external-link", visible: true }
+  { id: "products", parentId: null, order: 5, label: "Product", targetPath: "/en/products", itemType: "internal-page", visible: true },
+  { id: "github", parentId: null, order: 6, label: "GitHub", targetPath: "https://github.com/JJDing-Louis", itemType: "external-link", visible: true }
 ];

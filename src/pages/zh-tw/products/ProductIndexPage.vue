@@ -1,7 +1,7 @@
 <template>
   <section class="notes-page">
     <header>
-      <p>Product</p>
+      <p>Side Project</p>
       <h2>作品入口</h2>
     </header>
     <ProductGrid :items="items" />
