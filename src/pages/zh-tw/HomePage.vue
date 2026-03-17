@@ -4,7 +4,7 @@
     <LanguageSummarySection title="技能摘要" :items="skillSummaryItems" />
     <GitHubActivitySection
       title="GitHub 最近活動"
-      :message="model.githubActivity.fallbackMessage ?? '顯示最新公開資料'"
+      :message="model.githubActivity.fallbackMessage ?? '最近更新的專案'"
       :repositories="model.githubActivity.repositories"
       :contribution-graph-url="model.githubActivity.contributionGraphUrl"
       graph-alt="GitHub contributions graph"

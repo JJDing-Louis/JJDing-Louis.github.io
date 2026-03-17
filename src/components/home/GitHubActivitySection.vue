@@ -4,7 +4,7 @@
     <h2 class="home-card__title">{{ title }}</h2>
     <p class="home-card__text">{{ message }}</p>
     <ul class="home-card__list" v-if="repositories.length">
-      <li v-for="repo in repositories" :key="repo.name">
+      <li v-for="repo in repositories.slice(0, 3)" :key="repo.name">
         <a :href="repo.url" target="_blank" rel="noreferrer">{{ repo.name }}</a>
       </li>
     </ul>

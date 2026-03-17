@@ -4,7 +4,7 @@
     <LanguageSummarySection title="Skill Summary" :items="skillSummaryItems" />
     <GitHubActivitySection
       title="Recent GitHub Activity"
-      :message="model.githubActivity.fallbackMessage ?? 'Showing latest public data'"
+      :message="model.githubActivity.fallbackMessage ?? 'Recently updated projects'"
       :repositories="model.githubActivity.repositories"
       :contribution-graph-url="model.githubActivity.contributionGraphUrl"
       graph-alt="GitHub contributions graph"
