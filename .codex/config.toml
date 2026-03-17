@@ -1,0 +1,14 @@
+model = "gpt-5-codex"
+language = "zh-TW"
+
+project = "JJDing-Louis.github.io"
+
+[spec_kit]
+enabled = true
+spec_dir = "specs"
+
+[tools]
+
+shell = true
+git = true
+filesystem = true
