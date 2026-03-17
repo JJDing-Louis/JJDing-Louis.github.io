@@ -1,6 +1,6 @@
 <template>
   <section class="chip-card">
-    <p class="chip-card__eyebrow">Languages</p>
+    <p class="chip-card__eyebrow">Skills</p>
     <h2 class="chip-card__title">{{ title }}</h2>
     <div class="chip-card__list">
       <span v-for="item in items" :key="item" class="chip-card__chip">{{ item }}</span>

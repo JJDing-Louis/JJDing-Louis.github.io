@@ -1,7 +1,7 @@
 <template>
   <div class="home-page-grid">
     <ProfileSummarySection title="Experience" :intro="model.profile.intro" :work-experience="model.profile.workExperience" />
-    <LanguageSummarySection title="Primary Languages" :items="model.profile.primaryLanguages" />
+    <LanguageSummarySection title="Skill Summary" :items="skillSummaryItems" />
     <GitHubActivitySection
       title="Recent GitHub Activity"
       :message="model.githubActivity.fallbackMessage ?? 'Showing latest public data'"
@@ -21,7 +21,10 @@ import GitHubActivitySection from "@/components/home/GitHubActivitySection.vue";
 import HomeCategoryEntrySection from "@/components/home/HomeCategoryEntrySection.vue";
 import { getHomePageModel } from "@/services/home/homePageService";
 import { profileEn } from "@/data/profile/profile.en";
+import { aboutEn } from "@/data/profile/about.en";
 import { githubFallback } from "@/data/github/githubFallback";
+
+const skillSummaryItems = [...new Set(aboutEn.skillGroups.flatMap((group) => group.items))];
 
 const model = reactive({
   profile: profileEn,

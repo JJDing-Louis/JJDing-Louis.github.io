@@ -1,7 +1,7 @@
 <template>
   <div class="home-page-grid">
     <ProfileSummarySection title="工作經歷" :intro="model.profile.intro" :work-experience="model.profile.workExperience" />
-    <LanguageSummarySection title="常用程式語言" :items="model.profile.primaryLanguages" />
+    <LanguageSummarySection title="技能摘要" :items="skillSummaryItems" />
     <GitHubActivitySection
       title="GitHub 最近活動"
       :message="model.githubActivity.fallbackMessage ?? '顯示最新公開資料'"
@@ -21,7 +21,10 @@ import GitHubActivitySection from "@/components/home/GitHubActivitySection.vue";
 import HomeCategoryEntrySection from "@/components/home/HomeCategoryEntrySection.vue";
 import { getHomePageModel } from "@/services/home/homePageService";
 import { profileZhTw } from "@/data/profile/profile.zh-TW";
+import { aboutZhTw } from "@/data/profile/about.zh-TW";
 import { githubFallback } from "@/data/github/githubFallback";
+
+const skillSummaryItems = [...new Set(aboutZhTw.skillGroups.flatMap((group) => group.items))];
 
 const model = reactive({
   profile: profileZhTw,
