@@ -1,8 +1,9 @@
 export const profileEn = {
-  intro: "A software engineer focused on backend development, databases, and technical knowledge sharing.",
+  intro: "Focused on enterprise systems, API design, and data integration, with practical experience in AOI imaging systems and backend architecture.",
   workExperience: [
-    "Maintains technical notes and practical coding walkthroughs",
-    "Builds portfolio projects across web, desktop, and database domains"
+    "TopDragon Technology Co., Ltd. | Software Engineer",
+    "TALIANG Technology Co., Ltd. | Software Engineer",
+    "SAMURAI SPIRIT INC (merged into K&S) | Optical Engineer"
   ],
   primaryLanguages: ["Python", "C#", "JavaScript", "SQL"]
 };

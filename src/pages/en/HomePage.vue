@@ -1,6 +1,11 @@
 <template>
   <div class="home-page-grid">
-    <ProfileSummarySection title="Experience" :intro="model.profile.intro" :work-experience="model.profile.workExperience" />
+    <ProfileSummarySection
+      title="Summary"
+      :intro="model.profile.intro"
+      career-title="Work Experience (8-9 years)"
+      :work-experience="model.profile.workExperience"
+    />
     <LanguageSummarySection title="Skill Summary" :items="skillSummaryItems" />
     <GitHubActivitySection
       title="Recent GitHub Activity"
