@@ -1,0 +1,31 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="transparent"/>
+  <g opacity="0.45">
+    <path d="M0 80H800" stroke="#D8E5F7"/>
+    <path d="M0 160H800" stroke="#D8E5F7"/>
+    <path d="M0 240H800" stroke="#D8E5F7"/>
+    <path d="M0 320H800" stroke="#D8E5F7"/>
+    <path d="M0 400H800" stroke="#D8E5F7"/>
+    <path d="M0 480H800" stroke="#D8E5F7"/>
+    <path d="M0 560H800" stroke="#D8E5F7"/>
+    <path d="M0 640H800" stroke="#D8E5F7"/>
+    <path d="M0 720H800" stroke="#D8E5F7"/>
+    <path d="M80 0V800" stroke="#D8E5F7"/>
+    <path d="M160 0V800" stroke="#D8E5F7"/>
+    <path d="M240 0V800" stroke="#D8E5F7"/>
+    <path d="M320 0V800" stroke="#D8E5F7"/>
+    <path d="M400 0V800" stroke="#D8E5F7"/>
+    <path d="M480 0V800" stroke="#D8E5F7"/>
+    <path d="M560 0V800" stroke="#D8E5F7"/>
+    <path d="M640 0V800" stroke="#D8E5F7"/>
+    <path d="M720 0V800" stroke="#D8E5F7"/>
+  </g>
+  <g opacity="0.4">
+    <circle cx="80" cy="80" r="2" fill="#82D8C5"/>
+    <circle cx="400" cy="160" r="2" fill="#77B8F6"/>
+    <circle cx="640" cy="320" r="2" fill="#FDB595"/>
+    <circle cx="240" cy="480" r="2" fill="#F5C95D"/>
+    <circle cx="560" cy="640" r="2" fill="#82D8C5"/>
+    <circle cx="720" cy="720" r="2" fill="#77B8F6"/>
+  </g>
+</svg>

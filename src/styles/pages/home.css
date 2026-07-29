@@ -1,0 +1,5 @@
+.home-page-grid {
+  display: grid;
+  gap: 1.35rem;
+  grid-template-columns: 1fr;
+}

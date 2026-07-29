@@ -1,0 +1,63 @@
+
+body
+{
+  background-color: lightyellow;
+}
+
+header
+{
+  height: 50px;
+}
+
+main>div
+{
+  background-color: rgb(109, 253, 255);
+  padding-bottom:5%;
+  width: 80%;
+}
+
+footer
+{
+  width: 80%;
+}
+
+main>div
+{
+  float: left;
+}
+
+footer
+{
+  background-color: honeydew;
+}
+
+aside 
+{
+  width: 20%;   
+  height: max-content;
+  position: fixed;
+  right: 0px;
+  top: 60px;
+
+}
+
+h1
+{
+  padding-top: 10px;
+}
+
+
+.zone{
+    background-color:rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius:30px;
+    margin: 2px;
+    width: 20%;
+    height: 200px ;
+    padding: 20px;
+    background-size:40% 40%; 
+    text-align: center;
+    background-position-x: center;   
+    background-position-y: 70%;
+}

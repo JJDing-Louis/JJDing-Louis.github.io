@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python-Ch01 基本程式設計</title>
+    <!--補icon載入-->
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <!---外埔資源載入-->
+    <!--jquery-->
+    <script src="js/jquery/jquery-3.6.4.js"></script>
+    <!--plungin start-->
+    <!--Bootstrap.cs-->
+    <link rel="stylesheet" href="css/bootstrap_css/bootstrap.css">
+    <!--Bootsrap.js-->
+    <script src="js/bootstrap_js/bootstrap.min.js"></script>
+    <!--prism.js-->
+    <script src="javascripts/prism.js"></script>
+    <!--prism.css-->
+    <link rel='stylesheet' id='prism-style-css' href='css/prism.css'/>
+    <!--plungin end-->
+    <!--內部資源載入-->
+    <!--共同-->
+    <!--javascript-->
+    <script src="js/Common/allpage.js"></script>
+    <!--For Python.html-->
+    <!--cs-->
+    <link rel="stylesheet" href="css\ProgramNote\Basic\Python\Python.css">
+    <!--javascript-->
+    <script src="js/ProgramNote/Basic/Python/Python.js"></script>
+    <!--字體-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--載入共同模組Header-->
+    </header>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Python介紹</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                </div>
+            </div>
+        </div>
+        <h2>索引</h2>
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><a href="#0-1">0-1 Python 簡介</a></h5>
+                    <h5><a href="#0-2">0-2 推薦的 IDE </a></h5>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h3 id="0-1">0-1 Python 簡介</h3>
+        <p> Python
+            是一種簡單上手且功能強大的直譯式的程式語言，本身是物件導向式的語言，其函式、模組、數字、字串都是物件。另外，Python支援繼承、重載、衍生、多重繼承的特性大大的增加了程式碼的複用性。由於寫法教完簡單易懂，可讀性佳以外，本身具有內建的函式庫做使用，而近期來許多社群的相互呼應與開放原始碼的風氣下，出現了不少大量的韓是褲可供使用。
+            <br>Python的應用範圍很廣，可大致上如下:
+        </p>
+        <ul>
+            <li>網路應用程式開發: Django、Pyramid、TurboGears、Tornado、web2py、Zope、Flask…</li>
+            <li>GUI設計: 本身包含的Tkinter庫能夠支援簡單的GUI開發，還可用PyGtk、PyQt與WxPython</li>
+            <li>網路爬蟲: BeautifulSoup、Requests</li>
+            <li>科學計算: Matplotlib、Pandas、NumPy</li>
+        </ul>
+        <p>詳細的函式庫內容，可參考以下網址:</p>
+        <ul>
+            <li>PyPI · The Python Package Index: <a href="https://pypi.org/">https://pypi.org/</a></li>
+            <li>Python官方網站: <a href="Python官方網站: https://www.python.org/">https://www.python.org/</a></li>
+        </ul>
+        <hr>
+        <h3 id="0-2">0-2 推薦的 IDE</h3>
+        <p>市面上推薦的IDE成是繁多，不及備載，筆者目前先推薦用的順手的幾個IDE軟體:</p>
+        <img src="/imges/PyCharm_Logo.svg.png" width="96px" height="96px" alt="PyCharm">
+        <h5>PyCharm</h5>
+        <p>由捷克公司JetBrains開發，提供代碼分析、圖形化調試器，集成測試器、集成版本控制系統，並支持使用Django進行網頁開發。有分成社群板與專業版，而社群版只提供Pytho的一般程式開發。</p>
+        <P>網站連結:<a href="https://www.jetbrains.com/pycharm/">PyCharm</a></P>
+        <img src="/imges/s3cn2zkvmm4xpe5a52xzls86namohqhf-pycharm.jpg" width="1024px" height="550px">
+        <p></p>
+        <img src="/imges/200px-Visual_Studio_Code_1.35_icon.svg.png" width="96px" height="96px">
+        <h5>VSCode</h5>
+        <p>全名Visual Studio Code，是一個跨平台的程式編輯器且開放原始碼，內建了Git版本控制，同時內建了許多擴程式管理的功能，由Microsoft所開發。</p>
+        <P>網站連結:<a href="https://code.visualstudio.com/">VS Code</a></P>
+        <img src="/imges/Visual_Studio_Code_0.10.1_on_Windows_7,_with_search.png" width="1024px" height="550px">
+        <p></p>
+        <img src="/imges/240px-Spyder_logo.svg.png" width="96px" height="96px">
+        <p>Python語言的開放原始碼跨平台科學運算整合開發環境(IDE)整合了NumPy，SciPy，Matplotlib與IPython，以及其他開源軟體。本身整合於Anaconda的平台上，安狀Anaconda自東就會包含Spyder，也是目前證照考試常用的程式編輯器。
+        </p>
+        <P>網站連結:<a href="https://www.spyder-ide.org/">Spyder</a></P>
+        <img src="/imges/1024px-Spyder-windows-screenshot.png" width="1024px" height="550px">
+        <p>參考資料來源:</p>
+        <ul>
+            <li>Python 3.x 程式語言特訓教材（第二版） 作者： 蔡明志 出版社：碁峰</li>
+            <li>10款好用的 Python IDE總結與推薦:<a
+                    href="https://www.itread01.com/content/1548827668.html">https://www.itread01.com/content/1548827668.html</a>
+            </li>
+            <li>Wikipedia-PyCharm :<a
+                    href="https://zh.wikipedia.org/wiki/PyCharm">https://zh.wikipedia.org/wiki/PyCharm</a></li>
+            <li>Wikipedia-VS Code :<a
+                    href="https://zh.wikipedia.org/wiki/Visual_Studio_Code">https://zh.wikipedia.org/wiki/Visual_Studio_Code</a>
+            </li>
+            <li>Wikipedia-Spyder : <a
+                    href="https://zh.wikipedia.org/wiki/Spyder">https://zh.wikipedia.org/wiki/Spyder</a></li>
+        </ul>
+        <aside>
+            <!--導覽列-->
+        </aside>
+    </main>
+    <footer class="fixed-bottom">
+        <!--載入共同模組Footer-->
+    </footer>
+</body>
+
+</html>
